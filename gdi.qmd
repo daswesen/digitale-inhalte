@@ -1,59 +1,354 @@
 ---
-title: “Data‑Driven Content Optimization”
-author: “Dr. Tom Alby”
-institute: “HAW Hamburg – Digitale Transformation”
-date: “Wintersemester 2025”
-format: revealjs
-editor: visual
+title: Konzeption Digitaler Inhalte
+author: Dr. Tom Alby
+institute: “HAW Hamburg”
+date: now
+format: pptx
 slide-number: true
-toc: false
-theme: simple
-highlight-style: atom-one-light
 incremental: true
 ---
 
-Titelfolie
+------------------------------------------------------------------------
 
-Data‑Driven Content Optimization
+# Sitzung 1: Einführung, Organisatorisches und Grundlage
 
-Digitale Transformation und Content‑Analytics für die Medien‑ und Informationswirtschaft. In dieser Veranstaltung lernen Sie, wie Sie Nutzungsdaten digitaler Inhalte in wertvolle Erkenntnisse verwandeln, um Inhalte zielgruppengerecht zu optimieren und datenbasierte Produkte zu entwickeln.
+## Aus dem Modulhandbuch
 
-Kursziele und Prüfungsleistung • Verstehen der Rolle von Daten in der digitalen Transformation: Sie lernen den Unterschied zwischen Daten, Informationen und Erkenntnissen kennen und reflektieren, wie sich digitale Inhalte und Produkte daran ausrichten. • Datenaufbereitung und Qualitätsbewertung: Sie beherrschen verschiedene Datenformate (CSV, JSON, ARFF, Excel) und wissen um Vor‑ und Nachteile dieser Formate sowie die Bedeutung von Datenqualität und ‑bereinigung. • Explorative Analyse und Visualisierung: Sie können Content‑Nutzungsdaten explorativ analysieren und mit klaren Visualisierungen kommunizieren; dabei folgen Sie bewährten Gestaltungsprinzipien und Storytelling‑Techniken. • Interaktive Dashboards entwickeln: In Kleingruppen erstellen Sie eine Mini‑Anwendung (Shiny oder Streamlit), in der Content‑Daten interaktiv ausgewertet werden. • Personalisierung und Empfehlung: Sie wenden einfache Segmentierungs‑ und Assoziationsverfahren an, um Inhalte zielgruppenspezifisch zu empfehlen. • Verantwortungsvolle Analyse: Sie reflektieren Bias, Repräsentativität und ethische Aspekte in der Analyse von Nutzungsdaten. • Prüfungsleistung: 20‑minütiges Referat während des Semesters + 3–5‑seitiger Kurzbericht zum eigenen Projekt (Analyse eines Content‑Datensatzes, inkl. Datenaufbereitung, Visualisierung, Erkenntnisse und Reflexion).
+Die Studierenden können Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und Digital-Produkte entwickeln, indem sie
 
-Agenda der Veranstaltung 1. Woche 1 – Einführung: Content‑Analytics und digitale Transformation. Beispiele für Newsletter‑Klickraten, Social‑Media‑Engagement und A/B‑Tests. 2. Woche 2 – Daten, Information, Insight: DIKW‑Pyramide, Aufmerksamkeit als knappe Ressource und Unterschiede zwischen Daten, Informationen und Wissen. 3. Woche 3 – Datenquellen und Formate: Typische Quellen (Newsletter‑Systeme, Webtracking, Social APIs) und Datenformate (CSV, JSON, ARFF, Excel). 4. Woche 4 – Datenqualität und ‑bereinigung: Dimensionen der Datenqualität, Cleaning‑Prozess und Umgang mit fehlenden Werten, Ausreißern und inkonsistenten Formaten. 5. Woche 5 – Explorative Analyse & Content‑Metriken: Deskriptive Analysen, Korrelation vs. Kausalität, Content‑KPIs wie Öffnungs‑ und Klickraten. 6. Woche 6 – Visualisierung & Storytelling: Fünf Schritte zur guten Visualisierung, Wahl geeigneter Diagrammtypen, Reduktion von „Clutter“ und narrativer Aufbau. 7. Woche 7 – Interaktive Dashboards (Einführung): Grundlagen von Shiny (R) und Streamlit (Python), Reaktivität und Layouts. 8. Woche 8 – Dashboard‑Projekte I: Gruppenarbeiten starten – Daten laden, filtern, ersten Prototyp entwickeln. 9. Woche 9 – Dashboard‑Projekte II: Insights herausarbeiten, Segmentierungen integrieren und Nutzerführung verbessern. 10. Woche 10 – Personalisierung und Empfehlung: Clustering, Assoziationsregeln und einfache Empfehlungslogik für Newsletter‑Inhalte. 11. Woche 11 – Bias & Verantwortung: Convenience Sampling, Non‑Responder, Yes‑/No‑Bias, soziale Erwünschtheit und weitere Verzerrungen in Umfragen und Nutzungsdaten. 12. Woche 12 – Wrap‑up & Reflexion: Zusammenfassung, Erfahrungsaustausch, Ausblick auf Referate/Kurzbericht.
+-   digitale Inhalte, Daten- und Medienprodukte sowie interaktive Darstellungsformen beispielsweise mit Methoden der User Experience konzipieren und realisieren,
 
-Woche 1 – Einführung: Content‑Analytics in der Praxis • Was ist Content‑Analytics? – Analyse von Nutzungsdaten (z. B. Öffnungs‑ und Klickraten, Verweildauer, Scroll‑Tiefen) zur Optimierung digitaler Inhalte und Produkte. – Beispiele aus Newslettern, Blogs, Podcasts oder Streaming‑Plattformen. • Digitale Transformation: Inhalte werden zunehmend plattformübergreifend produziert und personalisiert; datengetriebene Entscheidungen ersetzen Bauchgefühle. • Warum datengetrieben? Ohne Daten lassen sich Trends und Präferenzen nur erraten; mit Daten können Sie fundierte Annahmen überprüfen und zielgerichtete Veränderungen vornehmen. • Beispiele: – Analyse von Newsletter‑Klickraten, um zu erkennen, welche Themen Trends setzen. – A/B‑Tests für Betreffzeilen oder Inhalte. – Customer Journey‑Tracking zur Optimierung von Landingpages.
+-   um innovative Gestaltungsformate zu etablieren und damit Zielgruppen überprüfbar zu erreichen.
 
-Woche 2 – Daten, Information und Insight • Daten ≠ Information: Daten sind rohe Messungen ohne Kontext; Informationen entstehen erst durch Verarbeitung und Interpretation. • DIKW‑Pyramide: Daten → Information → Wissen → Weisheit. Sie beschreibt, wie Rohdaten durch Kontext und Erfahrung in Entscheidungsgrundlagen transformiert werden. • Aufmerksamkeit als knappes Gut: In der „Attention Economy“ zahlen Nutzer\*innen mit ihrer Aufmerksamkeit; Informationsüberflutung erfordert filternde Mechanismen. • Data Mining als Brücke: Data Mining extrahiert Muster und Korrelationen aus großen Datenmengen, um relevante Informationen zu erzeugen.
+## Aus dem Modulhandbuch, continued
 
-Bildplatzhalter: Schematische Darstellung der DIKW‑Pyramide mit den Ebenen Daten, Information, Wissen und Weisheit.
+Die Studierenden können digitale Transformation verantwor- tungsbewusst und adressatengerecht gestalten, indem sie
 
-Woche 3 – Datenquellen und Formate • Content‑Datenquellen: – Newsletter‑Systeme (z. B. Mailchimp, CleverReach): Öffnungs- und Klickraten, Bounce‑Rates. – Web‑Analyse (z. B. Matomo, Google Analytics): Pageviews, Sessions, Scroll‑Tiefe. – Social‑Media‑APIs (z. B. Twitter/X, Facebook, Instagram): Likes, Shares, Kommentare. • Dateiformate und ihre Eigenschaften: – CSV: Komma‑getrennte Werte; oft auch Semikolon oder Tab als Separator. Geeignet für viele Datensätze, aber keine expliziten Datentypen. – JSON: Hierarchische Struktur mit geschachtelten Objekten. Varianten wie NDJSON (Newline Delimited JSON) erschweren das Parsing. – ARFF: Wie CSV, enthält aber einen Header mit Attributinformationen; wird in Weka verwendet. – Excel: Proprietäres Format; für einfache Analysen geeignet, aber problematisch bei großen Datenmengen. – Parquet: Spaltenorientiertes, komprimiertes Format, ideal für Big‑Data‑Analyse (Erwähnung aus dem Data‑Mining‑Skript). • Vor‑ und Nachteile: CSV ist universell, aber ohne Metadaten; JSON ist flexibel, aber schwer zu normalisieren; ARFF bietet Metadaten, aber ist weniger verbreitet; Excel ist benutzerfreundlich, aber potenziell fehleranfällig; Parquet ist effizient, benötigt aber spezielle Werkzeuge.
+-   Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und digitale Produkte konzipieren und entwickeln;
+-   Informationen, Inhalte und Datenbestände erschließen, kuratieren, aufbereiten, lizenzieren und publizieren;
+-   Daten, digitale Medien und Technologien zielgruppenspezifisch vermitteln und kommunizieren.
 
-Bildplatzhalter: Beispiel für einen verschachtelten JSON‑Datensatz mit verschiedenen Haustieren.
+## Kursziele und Prüfungsleistung
 
-Woche 4 – Datenqualität und ‑bereinigung • Warum Datenqualität wichtig ist: Unsaubere Daten führen zu falschen Erkenntnissen, schlechtem Modellverhalten und teuren Fehlentscheidungen. • Typische Probleme: – Fehlende Werte: Spalten oder Zeilen mit unvollständigen Informationen. – Duplikate: Redundante Datensätze verzerren die Analyse. – Inkonsistente Formate: Unterschiedliche Darstellungen (z. B. Datums‑ oder Währungsformate). • Dimensionen der Datenqualität 1. Vollständigkeit – Sind alle benötigten Daten vorhanden? 2. Gültigkeit – Entsprechen Werte definierten Standards oder Bereichen? 3. Richtigkeit – Sind die Daten frei von Fehlern und plausibel? 4. Stimmigkeit – Passen die Daten über verschiedene Systeme hinweg zusammen? 5. Relevanz – Werden nur die benötigten Daten erfasst? 6. Aktualität – Sind die Daten aktuell und zeitnah? 7. Integrität – Wurden Dubletten entfernt und Beziehungen korrekt abgebildet? 8. Zugänglichkeit – Können die Daten problemlos abgerufen und genutzt werden? • Reinigungsprozess 1. Technisch korrigieren: Datentypen festlegen, Zeichenketten normalisieren, Datumsformate konvertieren, Encoding vereinheitlichen. 2. Konsistenz herstellen: Fehlende Werte behandeln (löschen, imputieren), Ausreißer identifizieren, offensichtlich falsche Daten korrigieren, Inkonsistenzen auflösen. • Paretoprinzip: Perfekte Datenreinigung ist kaum möglich – konzentrieren Sie sich auf die größten Probleme (80/20‑Regel).
+- Rolle von Daten: Unterschied zwischen Daten, Informationen und Erkenntnissen verstehen und digitale Inhalte daran ausrichten.
+- Datenaufbereitung: Formate (CSV, JSON, Excel …) kennen und Datenqualität sowie -bereinigung sicherstellen.
+- Analyse & Visualisierung: Content-Daten explorativ analysieren und klar visualisieren – mit Fokus auf gute Gestaltung und Storytelling.
 
-Bildplatzhalter: Flowchart des Data‑Cleaning‑Prozesses von Rohdaten bis zu konsistenten Daten.
+## Kursziele und Prüfungsleistung II
 
-Woche 5 – Explorative Analyse & Content‑Metriken • Deskriptive Analyse: Überblick über zentrale Tendenz (Mittelwert, Median, Modus) und Streuung (Varianz, Standardabweichung). • Korrelation vs. Kausalität: Korrelation beschreibt einen statistischen Zusammenhang, impliziert aber keine Richtung; Scheinkorrelationen (z. B. Eis‑Konsum vs. Ertrinkende) verdeutlichen falsche Schlüsse. • Content‑KPIs: – Open Rate = Anzahl geöffneter E‑Mails ÷ Anzahl erfolgreich zugestellter E‑Mails × 100 %. – Click‑through Rate (CTR) = Anzahl Klicks ÷ Anzahl gesendeter E‑Mails × 100 %. – Click‑to‑open Rate (CTOR) = Anzahl Klicks ÷ Anzahl geöffneter E‑Mails × 100 %. – Engagement Rate (Social Media) = Summe aus Likes, Kommentaren, Shares ÷ Gesamtzahl der Follower × 100 %. – Bounce Rate = Anzahl hart oder weich zurückgesandter E‑Mails ÷ Anzahl gesendeter E‑Mails × 100 %. • Interpretation: Hohe CTR bei niedriger Öffnungsrate kann ein Zeichen für gezielte Segmentierung sein; umgekehrt kann eine hohe Öffnungsrate ohne Klicks auf unattraktive Call‑to‑Actions hinweisen.
+-   Personalisierung und Empfehlung: Sie wenden einfache Segmentierungs‑ und Assoziationsverfahren an, um Inhalte zielgruppenspezifisch zu empfehlen.
 
-Woche 6 – Visualisierung & Storytelling • Fünf Schritte zur guten Visualisierung 1. Kontext verstehen – Zielgruppe, Handlungsaufforderung, verfügbare Daten. 2. Passendes Diagramm wählen – Text für einzelne Zahlen, Liniendiagramme für kontinuierliche Daten, Balkendiagramme für kategoriale Daten; vermeiden Sie Kuchen‑ und 3D‑Diagramme. 3. „Clutter“ entfernen – Alles weglassen, was keinen Informationswert hat; Weißraum nutzen. 4. Aufmerksamkeit lenken – Größe, Position und gelegentlich Farbe, um das Wesentliche hervorzuheben. 5. Storytelling – Daten in einen narrativen Rahmen mit Anfang, Spannung und Schluss (Call‑to‑Action) einbetten. • Farben sinnvoll nutzen: Farben transportieren Bedeutung (Rot = Warnung). Diagramme müssen auch in Schwarz‑Weiß funktionieren. • Beispiele für Visualisierungstypen: Histogramme, Boxplots, Heatmaps, Sankey‑Diagramme, Bubble‑Charts, Treemaps usw. Je nach Fragestellung eignen sich unterschiedliche Formen – komplexe Diagramme nur, wenn sie einen klaren Mehrwert liefern.
+-   Verantwortungsvolle Analyse: Sie reflektieren Bias, Repräsentativität und ethische Aspekte in der Analyse von Nutzungsdaten.
 
-Bildplatzhalter: Abbildung eines aussagekräftigen Balkendiagramms und eines kontrastierenden, überladenen Kreisdiagramms.
+-   Prüfungsleistung: 20‑minütiges Referat (mündliche Prüfung) und/oder 3–5‑seitiger Kurzbericht (schriftliche Prüfung): Analyse eines Content‑Datensatzes, inkl. Datenaufbereitung, Visualisierung, Erkenntnisse und Reflexion).
 
-Woche 7 – Interaktive Dashboards (Einführung) • Warum Dashboards?: Statt statischer Berichte ermöglichen Dashboards eine explorative Analyse; Nutzer\*innen filtern, sortieren und fokussieren Daten eigenständig. • Shiny (R): – R‑Paket für webbasierte interaktive Anwendungen. – Reaktive Programmierung: Die Oberfläche aktualisiert sich automatisch bei Änderungen von Inputs oder Daten. – Ideal für Analysen mit R und ggplot2; Deployment über Shiny‑Server. • Streamlit (Python): – Python‑Framework für schnelle Web‑Apps; einfache Syntax, automatische UI‑Elemente. – Unterstützt Pandas‑DataFrames, Plotly und andere Bibliotheken. – Für Python‑affine Studierende eine Alternative zu Shiny. • Dashboards planen: Definieren Sie die Fragestellung, wählen Sie geeignete KPIs und Visualisierungen und sorgen Sie für eine intuitive Navigation.
+## Logistik
 
-Woche 8 – Dashboard‑Projekte I • Projektstart: – Bilden Sie kleine Teams (2–3 Personen) und wählen Sie einen Content‑Datensatz (Newsletter, Podcast‑Statistiken, Social‑Media‑Analytics o. Ä.). – Formulieren Sie eine Forschungsfrage, z. B. „Welche Newsletter‑Rubriken erzielen überdurchschnittliche Klickraten?“ – Laden Sie die Daten in Shiny oder Streamlit und beginnen Sie mit der Aufbereitung und ersten Visualisierung. • Leitfragen: – Welche Zielgruppe soll angesprochen werden? – Welche KPIs sind relevant? – Welche Filter und Interaktionen sind für Benutzer\*innen sinnvoll? • Tipps: Iterativ vorgehen, Zwischenergebnisse testen, Feedback einholen.
+- Keine Anwesenheitspflicht
+- Teilnahme auch online möglich
+- Moodle Einschreibepasswort: CommanderData!
+- Sie entscheiden selbst, wie viel Sie hier im Kurs mitnehmen wollen - Ich mache nur Angebote
+- ChatGPT & Co sind ausdrücklich erlaubt, aber Sie müssen das Protokoll teilen
 
-Bildplatzhalter: Screenshot eines einfachen Dashboards mit Filterelementen, Diagrammen und KPIs.
+## Warum erstellen wir Inhalte?
 
-Woche 9 – Dashboard‑Projekte II • Insights entwickeln: – Ergänzen Sie Segmentierungen (z. B. nach Newsletter‑Themen, Wochentag, Zielgruppe). – Identifizieren Sie Trends und Ausreißer; nutzen Sie Boxplots oder Heatmaps, um auffällige Muster sichtbar zu machen. – Integrieren Sie Benchmarking (z. B. Vergleich aktueller Kampagnen mit dem Durchschnitt). • Benutzerführung verbessern: – Klar strukturierte Navigation, aussagekräftige Überschriften. – Tooltips und Legenden zur Erklärung der Visualisierung. • Peer‑Feedback: Teams stellen sich gegenseitig kurz ihre Zwischenergebnisse vor; nutzen Sie Feedback, um Visualisierungen zu schärfen und narrative Kohärenz zu stärken.
 
-Woche 10 – Personalisierung & Empfehlung • Zielgruppensegmentierung: – Clustering (z. B. k‑Means): Gruppiert Nutzer*innen aufgrund ähnlicher Merkmale oder Verhaltensweisen; wichtig ist die Wahl der Distanzmetrik und der Anzahl der Cluster. – Hierarchische Clusterverfahren: Erstellen dendrogrammartige Strukturen; gut für explorative Analysen. • Assoziationsregeln: – Finden häufig auftretende Itemsets („Wenn Nutzer*in A die Rubrik ‚Finanzen‘ liest, klickt er/sie häufig auch auf ‚Investitionen‘“). – Kennzahlen: Support, Confidence, Lift. • Personalisierte Inhalte: Ergebnisse der Segmentierung können in Dashboard‑Empfehlungen einfließen (z. B. „Top‑Artikel für Segment 1“). • Ethische Aspekte: Personalisierung birgt Gefahr der Filterblase; lassen Sie Nutzer\*innen Wahlmöglichkeiten und erklären Sie Empfehlungskriterien.
+## Wie messen wir den Erfolg? Was ist Erfolg?
 
-Woche 11 – Bias & Verantwortung • Sampling‑Bias: Convenience‑Sampling und Non‑Responder führen zu nicht repräsentativen Daten; Umfragen mit freiwilligen Teilnehmer\*innen sind anfällig für Verzerrungen. • Antwortverzerrungen: Yes‑Bias, No‑Bias und Bias zur Mitte treten auf, wenn Teilnehmende dazu neigen, sozial erwünschte oder vermeintlich neutrale Antworten zu geben. • Soziale Erwünschtheit: Menschen passen ihre Antworten an, um in einem guten Licht zu erscheinen. • Confirmation Bias: Neigung, Informationen zu suchen oder zu interpretieren, die eigene Hypothesen bestätigen; während der Analyse bewusst gegenprüfen. • Überlebensbias: Fokussiert nur erfolgreiche Beispiele und ignoriert „unsichtbare“ Misserfolge. • Praktische Strategien: – Zufällige Stichproben und hohe Rücklaufquoten anstreben. – Skalen mit neutraler Mitte vermeiden, wo es sinnvoll ist. – Offene Fragen ergänzen, um vordefinierte Antwortmuster aufzulockern. – Bias‑Checks im Team diskutieren und bewusste Gegenbeispiele suchen.
 
-Woche 12 – Wrap‑up & Reflexion • Zusammenfassung: Von Daten zu Informationen und Insights; Data‑Cleaning und Qualitätsbewertung; explorative Analyse und Visualisierung; interaktive Dashboards; Personalisierung; Bias. • Lessons Learned: – Inhalte datengetrieben entwickeln und evaluieren statt aus dem Bauch heraus. – Klarer Fokus auf Zielgruppen und KPIs; Visualisierungen dienen der Kommunikation, nicht der Dekoration. – Datenqualität und kritische Reflexion sind Grundvoraussetzungen für belastbare Erkenntnisse. • Prüfungscoaching: – Terminplanung der Referate; jeder Termin sollte thematisch zur jeweiligen Sitzung passen. – Kurzbericht strukturiert aufbauen (Einleitung, Datenquelle, Methode, Ergebnisse, Reflexion). – Nutzen Sie die letzte Einheit für offene Fragen und Feedback zu Ihrem Projekt. • Ausblick: Data‑Driven Content Optimization ist ein laufendes Feld – neue Kanäle (z. B. TikTok, Podcasts), Datenschutz‑Entwicklungen und KI‑gestützte Personalisierung bieten ständig neue Herausforderungen und Chancen.
+## Was sind Daten? Was sind Informationen?
 
-Referenzen
+-   *Daten*
+    -   Roh, ungeordnet, noch nicht interpretiert
+    -   Bestehen aus Zahlen, Zeichen, Fakten ohne Kontext
+-   *Informationen*
+    -   Verarbeitete, kontextualisierte Daten
+    -   Haben Bedeutung und Relevanz für eine Fragestellung
+    -   **Daten + Kontext = Information**
+
+## DIKW-Pyramide
+
+![](images/dikw-pyramid-removebg-preview.png)
+
+## Daten oder Informationen?
+
+![](images/daten-oder-informationen.png)
+
+## Toms Pyramide
+
+![](images/tattoo.png)
+
+## Woraus entsteht eine Aktion?
+
+- Über KPIs, Metriken und Ziele
+- Ohne Ziele keine Aktion
+
+
+
+
+## Relevanz in der Aufmerksamkeitsökonomie
+
+![](images/relevance.png)
+
+## Data Mining für Relevanz
+
+-   **Aufmerksamkeit als knappes Gut**: In der „Attention Economy“ zahlen Nutzer\*innen mit ihrer Aufmerksamkeit; Informationsüberflutung erfordert filternde Mechanismen.
+
+-   **Data Mining als Brücke**: Data Mining extrahiert Muster und Korrelationen aus großen Datenmengen, um relevante Informationen zu erzeugen.
+
+## Beispiel: Newsletter
+
+- Was ist das Ziel/sind die Ziele eines Newsletters?
+- Was sind mögliche KPIs?
+
+## Wie funktioniert Data Mining?
+
+![](images/CRISP-DM_Process_Diagram.png)
+
+## Data Mining-Sprachen und -Systeme
+
+-   SPSS / PSPP
+-   SAS
+-   Python
+-   Scala
+-   Julia
+-   R
+-   Knime
+-   ...
+
+
+## Was ich geplant habe
+
+- Grundlagen Datenanalyse
+- Data Mining
+- A/B Testing
+- Datenvisualisierung
+- Interaktive Dashboards
+- Data Story Telling
+
+
+## Welche Inhalte wünschen Sie sich noch?
+
+
+
+## Nächste Schritte
+
+- Suchen Sie sich einen Datensatz bzw. ein Thema
+- Überlegen Sie sich ein Ziel und passende KPIs
+
+# Woche 2
+
+## **Woche 3 – Datenquellen und Formate**
+
+-   **Content‑Datenquellen**:
+
+    – Newsletter‑Systeme (z. B. Mailchimp, CleverReach): Öffnungs- und Klickraten, Bounce‑Rates.
+
+    – Web‑Analyse (z. B. Matomo, Google Analytics): Pageviews, Sessions, Scroll‑Tiefe.
+
+    – Social‑Media‑APIs (z. B. Twitter/X, Facebook, Instagram): Likes, Shares, Kommentare.
+
+-   **Dateiformate und ihre Eigenschaften**:
+
+    – **CSV**: Komma‑getrennte Werte; oft auch Semikolon oder Tab als Separator. Geeignet für viele Datensätze, aber keine expliziten Datentypen.
+
+    – **JSON**: Hierarchische Struktur mit geschachtelten Objekten. Varianten wie NDJSON (Newline Delimited JSON) erschweren das Parsing.
+
+    – **ARFF**: Wie CSV, enthält aber einen Header mit Attributinformationen; wird in Weka verwendet.
+
+    – **Excel**: Proprietäres Format; für einfache Analysen geeignet, aber problematisch bei großen Datenmengen.
+
+    – **Parquet**: Spaltenorientiertes, komprimiertes Format, ideal für Big‑Data‑Analyse (Erwähnung aus dem Data‑Mining‑Skript).
+
+-   **Vor‑ und Nachteile**: CSV ist universell, aber ohne Metadaten; JSON ist flexibel, aber schwer zu normalisieren; ARFF bietet Metadaten, aber ist weniger verbreitet; Excel ist benutzerfreundlich, aber potenziell fehleranfällig; Parquet ist effizient, benötigt aber spezielle Werkzeuge.
+
+**Bildplatzhalter:** *Beispiel für einen verschachtelten JSON‑Datensatz mit verschiedenen Haustieren.*
+
+## **Woche 4 – Datenqualität und ‑bereinigung**
+
+-   **Warum Datenqualität wichtig ist**: Unsaubere Daten führen zu falschen Erkenntnissen, schlechtem Modellverhalten und teuren Fehlentscheidungen.
+
+-   **Typische Probleme**:
+
+    – **Fehlende Werte**: Spalten oder Zeilen mit unvollständigen Informationen.
+
+    – **Duplikate**: Redundante Datensätze verzerren die Analyse.
+
+    – **Inkonsistente Formate**: Unterschiedliche Darstellungen (z. B. Datums‑ oder Währungsformate).
+
+-   **Dimensionen der Datenqualität**
+
+    1.  **Vollständigkeit** – Sind alle benötigten Daten vorhanden?
+
+    2.  **Gültigkeit** – Entsprechen Werte definierten Standards oder Bereichen?
+
+    3.  **Richtigkeit** – Sind die Daten frei von Fehlern und plausibel?
+
+    4.  **Stimmigkeit** – Passen die Daten über verschiedene Systeme hinweg zusammen?
+
+    5.  **Relevanz** – Werden nur die benötigten Daten erfasst?
+
+    6.  **Aktualität** – Sind die Daten aktuell und zeitnah?
+
+    7.  **Integrität** – Wurden Dubletten entfernt und Beziehungen korrekt abgebildet?
+
+    8.  **Zugänglichkeit** – Können die Daten problemlos abgerufen und genutzt werden?
+
+-   **Reinigungsprozess**
+
+    1.  **Technisch korrigieren**: Datentypen festlegen, Zeichenketten normalisieren, Datumsformate konvertieren, Encoding vereinheitlichen.
+
+    2.  **Konsistenz herstellen**: Fehlende Werte behandeln (löschen, imputieren), Ausreißer identifizieren, offensichtlich falsche Daten korrigieren, Inkonsistenzen auflösen.
+
+-   **Paretoprinzip**: Perfekte Datenreinigung ist kaum möglich – konzentrieren Sie sich auf die größten Probleme (80/20‑Regel).
+
+**Bildplatzhalter:** *Flowchart des Data‑Cleaning‑Prozesses von Rohdaten bis zu konsistenten Daten.*
+
+## **Woche 5 – Explorative Analyse & Content‑Metriken**
+
+-   **Deskriptive Analyse**: Überblick über zentrale Tendenz (Mittelwert, Median, Modus) und Streuung (Varianz, Standardabweichung).
+
+-   **Korrelation vs. Kausalität**: Korrelation beschreibt einen statistischen Zusammenhang, impliziert aber keine Richtung; Scheinkorrelationen (z. B. Eis‑Konsum vs. Ertrinkende) verdeutlichen falsche Schlüsse.
+
+-   **Content‑KPIs**:
+
+    – **Open Rate** = Anzahl geöffneter E‑Mails ÷ Anzahl erfolgreich zugestellter E‑Mails × 100 %.
+
+    – **Click‑through Rate (CTR)** = Anzahl Klicks ÷ Anzahl gesendeter E‑Mails × 100 %.
+
+    – **Click‑to‑open Rate (CTOR)** = Anzahl Klicks ÷ Anzahl geöffneter E‑Mails × 100 %.
+
+    – **Engagement Rate** (Social Media) = Summe aus Likes, Kommentaren, Shares ÷ Gesamtzahl der Follower × 100 %.
+
+    – **Bounce Rate** = Anzahl hart oder weich zurückgesandter E‑Mails ÷ Anzahl gesendeter E‑Mails × 100 %.
+
+-   **Interpretation**: Hohe CTR bei niedriger Öffnungsrate kann ein Zeichen für gezielte Segmentierung sein; umgekehrt kann eine hohe Öffnungsrate ohne Klicks auf unattraktive Call‑to‑Actions hinweisen.
+
+## **Woche 6 – Visualisierung & Storytelling**
+
+-   **Fünf Schritte zur guten Visualisierung**
+
+    1.  **Kontext verstehen** – Zielgruppe, Handlungsaufforderung, verfügbare Daten.
+
+    2.  **Passendes Diagramm wählen** – Text für einzelne Zahlen, Liniendiagramme für kontinuierliche Daten, Balkendiagramme für kategoriale Daten; vermeiden Sie Kuchen‑ und 3D‑Diagramme.
+
+    3.  **„Clutter“ entfernen** – Alles weglassen, was keinen Informationswert hat; Weißraum nutzen.
+
+    4.  **Aufmerksamkeit lenken** – Größe, Position und gelegentlich Farbe, um das Wesentliche hervorzuheben.
+
+    5.  **Storytelling** – Daten in einen narrativen Rahmen mit Anfang, Spannung und Schluss (Call‑to‑Action) einbetten.
+
+-   **Farben sinnvoll nutzen**: Farben transportieren Bedeutung (Rot = Warnung). Diagramme müssen auch in Schwarz‑Weiß funktionieren.
+
+-   **Beispiele für Visualisierungstypen**: Histogramme, Boxplots, Heatmaps, Sankey‑Diagramme, Bubble‑Charts, Treemaps usw. Je nach Fragestellung eignen sich unterschiedliche Formen – komplexe Diagramme nur, wenn sie einen klaren Mehrwert liefern.
+
+**Bildplatzhalter:** *Abbildung eines aussagekräftigen Balkendiagramms und eines kontrastierenden, überladenen Kreisdiagramms.*
+
+## **Woche 7 – Interaktive Dashboards (Einführung)**
+
+-   **Warum Dashboards?**: Statt statischer Berichte ermöglichen Dashboards eine explorative Analyse; Nutzer\*innen filtern, sortieren und fokussieren Daten eigenständig.
+
+-   **Shiny (R)**:
+
+    – R‑Paket für webbasierte interaktive Anwendungen.
+
+    – Reaktive Programmierung: Die Oberfläche aktualisiert sich automatisch bei Änderungen von Inputs oder Daten.
+
+    – Ideal für Analysen mit R und ggplot2; Deployment über Shiny‑Server.
+
+-   **Streamlit (Python)**:
+
+    – Python‑Framework für schnelle Web‑Apps; einfache Syntax, automatische UI‑Elemente.
+
+    – Unterstützt Pandas‑DataFrames, Plotly und andere Bibliotheken.
+
+    – Für Python‑affine Studierende eine Alternative zu Shiny.
+
+-   **Dashboards planen**: Definieren Sie die Fragestellung, wählen Sie geeignete KPIs und Visualisierungen und sorgen Sie für eine intuitive Navigation.
+
+## **Woche 8 – Dashboard‑Projekte I**
+
+-   **Projektstart**:
+
+    – Bilden Sie kleine Teams (2–3 Personen) und wählen Sie einen Content‑Datensatz (Newsletter, Podcast‑Statistiken, Social‑Media‑Analytics o. Ä.).
+
+    – Formulieren Sie eine Forschungsfrage, z. B. „Welche Newsletter‑Rubriken erzielen überdurchschnittliche Klickraten?“
+
+    – Laden Sie die Daten in Shiny oder Streamlit und beginnen Sie mit der Aufbereitung und ersten Visualisierung.
+
+-   **Leitfragen**:
+
+    – Welche Zielgruppe soll angesprochen werden?
+
+    – Welche KPIs sind relevant?
+
+    – Welche Filter und Interaktionen sind für Benutzer\*innen sinnvoll?
+
+-   **Tipps**: Iterativ vorgehen, Zwischenergebnisse testen, Feedback einholen.
+
+**Bildplatzhalter:** *Screenshot eines einfachen Dashboards mit Filterelementen, Diagrammen und KPIs.*
+
+## **Woche 9 – Dashboard‑Projekte II**
+
+-   **Insights entwickeln**:
+
+    – Ergänzen Sie Segmentierungen (z. B. nach Newsletter‑Themen, Wochentag, Zielgruppe).
+
+    – Identifizieren Sie Trends und Ausreißer; nutzen Sie Boxplots oder Heatmaps, um auffällige Muster sichtbar zu machen.
+
+    – Integrieren Sie Benchmarking (z. B. Vergleich aktueller Kampagnen mit dem Durchschnitt).
+
+-   **Benutzerführung verbessern**:
+
+    – Klar strukturierte Navigation, aussagekräftige Überschriften.
+
+    – Tooltips und Legenden zur Erklärung der Visualisierung.
+
+-   **Peer‑Feedback**: Teams stellen sich gegenseitig kurz ihre Zwischenergebnisse vor; nutzen Sie Feedback, um Visualisierungen zu schärfen und narrative Kohärenz zu stärken.
+
+## **Woche 10 – Personalisierung & Empfehlung**
+
+-   **Zielgruppensegmentierung**:
+
+    – **Clustering** (z. B. k‑Means): Gruppiert Nutzer\*innen aufgrund ähnlicher Merkmale oder Verhaltensweisen; wichtig ist die Wahl der Distanzmetrik und der Anzahl der Cluster.
+
+    – **Hierarchische Clusterverfahren**: Erstellen dendrogrammartige Strukturen; gut für explorative Analysen.
+
+-   **Assoziationsregeln**:
+
+    – Finden häufig auftretende Itemsets („Wenn Nutzer\*in A die Rubrik ‚Finanzen‘ liest, klickt er/sie häufig auch auf ‚Investitionen‘“).
+
+    – Kennzahlen: Support, Confidence, Lift.
+
+-   **Personalisierte Inhalte**: Ergebnisse der Segmentierung können in Dashboard‑Empfehlungen einfließen (z. B. „Top‑Artikel für Segment 1“).
+
+-   **Ethische Aspekte**: Personalisierung birgt Gefahr der Filterblase; lassen Sie Nutzer\*innen Wahlmöglichkeiten und erklären Sie Empfehlungskriterien.
+
+## **Woche 11 – Bias & Verantwortung**
+
+-   **Sampling‑Bias**: Convenience‑Sampling und Non‑Responder führen zu nicht repräsentativen Daten; Umfragen mit freiwilligen Teilnehmer\*innen sind anfällig für Verzerrungen.
+
+-   **Antwortverzerrungen**: Yes‑Bias, No‑Bias und Bias zur Mitte treten auf, wenn Teilnehmende dazu neigen, sozial erwünschte oder vermeintlich neutrale Antworten zu geben.
+
+-   **Soziale Erwünschtheit**: Menschen passen ihre Antworten an, um in einem guten Licht zu erscheinen.
+
+-   **Confirmation Bias**: Neigung, Informationen zu suchen oder zu interpretieren, die eigene Hypothesen bestätigen; während der Analyse bewusst gegenprüfen.
+
+-   **Überlebensbias**: Fokussiert nur erfolgreiche Beispiele und ignoriert „unsichtbare“ Misserfolge.
+
+-   **Praktische Strategien**:
+
+    – Zufällige Stichproben und hohe Rücklaufquoten anstreben.
+
+    – Skalen mit neutraler Mitte vermeiden, wo es sinnvoll ist.
+
+    – Offene Fragen ergänzen, um vordefinierte Antwortmuster aufzulockern.
+
+    – Bias‑Checks im Team diskutieren und bewusste Gegenbeispiele suchen.
+
+## **Woche 12 – Wrap‑up & Reflexion**
+
+-   **Zusammenfassung**: Von Daten zu Informationen und Insights; Data‑Cleaning und Qualitätsbewertung; explorative Analyse und Visualisierung; interaktive Dashboards; Personalisierung; Bias.
+
+
+-   
