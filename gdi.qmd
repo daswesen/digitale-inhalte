@@ -22,41 +22,48 @@ Die Studierenden können Prozesse und Strukturen in der Informations- und Medien
 
 ## Aus dem Modulhandbuch, continued
 
-Die Studierenden können digitale Transformation verantwor- tungsbewusst und adressatengerecht gestalten, indem sie
+Die Studierenden können digitale Transformation verantwortungsbewusst und adressatengerecht gestalten, indem sie
 
 -   Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und digitale Produkte konzipieren und entwickeln;
 -   Informationen, Inhalte und Datenbestände erschließen, kuratieren, aufbereiten, lizenzieren und publizieren;
 -   Daten, digitale Medien und Technologien zielgruppenspezifisch vermitteln und kommunizieren.
 
-## Kursziele und Prüfungsleistung
+## Kursziele
 
 - Rolle von Daten: Unterschied zwischen Daten, Informationen und Erkenntnissen verstehen und digitale Inhalte daran ausrichten.
-- Datenaufbereitung: Formate (CSV, JSON, Excel …) kennen und Datenqualität sowie -bereinigung sicherstellen.
-- Analyse & Visualisierung: Content-Daten explorativ analysieren und klar visualisieren – mit Fokus auf gute Gestaltung und Storytelling.
-
-## Kursziele und Prüfungsleistung II
 
 -   Personalisierung und Empfehlung: Sie wenden einfache Segmentierungs‑ und Assoziationsverfahren an, um Inhalte zielgruppenspezifisch zu empfehlen.
 
--   Verantwortungsvolle Analyse: Sie reflektieren Bias, Repräsentativität und ethische Aspekte in der Analyse von Nutzungsdaten.
+- Erfolgsüberprüfung: Sie definieren und überprüfen relevante KPIs
 
--   Prüfungsleistung: 20‑minütiges Referat (mündliche Prüfung) und/oder 3–5‑seitiger Kurzbericht (schriftliche Prüfung): Analyse eines Content‑Datensatzes, inkl. Datenaufbereitung, Visualisierung, Erkenntnisse und Reflexion).
+## Prüfungsleistung
+
+-   Prüfungsleistung: 20‑minütiges Referat (mündliche Prüfung) und/oder 3–5‑seitiger Kurzbericht (schriftliche Prüfung): Segmentierung einer Zielgruppe auf Basis von Daten, Konzept eines Datenprodukts, Erfolgsdefinition und -Reportingkonzept.
 
 ## Logistik
 
 - Keine Anwesenheitspflicht
-- Teilnahme auch online möglich
+- Teilnahme online möglich, keine Aufzeichnung
 - Moodle Einschreibepasswort: CommanderData!
-- Sie entscheiden selbst, wie viel Sie hier im Kurs mitnehmen wollen - Ich mache nur Angebote
 - ChatGPT & Co sind ausdrücklich erlaubt, aber Sie müssen das Protokoll teilen
 
-## Warum erstellen wir Inhalte?
+## Definitionen: Was sind digitale Inhalte, Daten- und Medienprodukte?
 
 
-## Wie messen wir den Erfolg? Was ist Erfolg?
+## Definitionen: Was sind "innovative Gestaltungsformate"?
 
 
-## Was sind Daten? Was sind Informationen?
+## Was bedeutet "überprüfbar erreichen"?
+
+
+## Was bedeutet...
+
+- "Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und digitale Produkte konzipieren und entwickeln"?
+- "Informationen, Inhalte und Datenbestände erschließen, kuratieren, aufbereiten, lizenzieren und publizieren"?
+- "Daten, digitale Medien und Technologien zielgruppenspezifisch vermitteln und kommunizieren"?
+
+
+## Was sind Daten überhaupt?
 
 -   *Daten*
     -   Roh, ungeordnet, noch nicht interpretiert
@@ -66,31 +73,26 @@ Die Studierenden können digitale Transformation verantwor- tungsbewusst und adr
     -   Haben Bedeutung und Relevanz für eine Fragestellung
     -   **Daten + Kontext = Information**
 
+## Datenkompetenz nach Ridsdale et al
+
+![](images/Ridsdale.png)
+
 ## DIKW-Pyramide
 
 ![](images/dikw-pyramid-removebg-preview.png)
 
-## Daten oder Informationen?
 
-![](images/daten-oder-informationen.png)
 
 ## Toms Pyramide
 
 ![](images/tattoo.png)
-
-## Woraus entsteht eine Aktion?
-
-- Über KPIs, Metriken und Ziele
-- Ohne Ziele keine Aktion
-
-
 
 
 ## Relevanz in der Aufmerksamkeitsökonomie
 
 ![](images/relevance.png)
 
-## Data Mining für Relevanz
+## Wie können wir Daten nutzen, um Relevanz zu erzeugen?
 
 -   **Aufmerksamkeit als knappes Gut**: In der „Attention Economy“ zahlen Nutzer\*innen mit ihrer Aufmerksamkeit; Informationsüberflutung erfordert filternde Mechanismen.
 
@@ -117,24 +119,14 @@ Die Studierenden können digitale Transformation verantwor- tungsbewusst und adr
 -   ...
 
 
-## Was ich geplant habe
-
-- Grundlagen Datenanalyse
-- Data Mining
-- A/B Testing
-- Datenvisualisierung
-- Interaktive Dashboards
-- Data Story Telling
-
-
 ## Welche Inhalte wünschen Sie sich noch?
 
 
 
 ## Nächste Schritte
 
-- Suchen Sie sich einen Datensatz bzw. ein Thema
-- Überlegen Sie sich ein Ziel und passende KPIs
+- Überlegen Sie sich ein Thema für ein digitales Produkt
+- Identifizieren Sie Daten, die die Zielgruppe definieren
 
 # Woche 2
 
