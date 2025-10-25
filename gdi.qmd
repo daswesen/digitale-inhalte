@@ -30,11 +30,11 @@ Die Studierenden können digitale Transformation verantwortungsbewusst und adres
 
 ## Kursziele
 
-- Rolle von Daten: Unterschied zwischen Daten, Informationen und Erkenntnissen verstehen und digitale Inhalte daran ausrichten.
+-   Rolle von Daten: Unterschied zwischen Daten, Informationen und Erkenntnissen verstehen und digitale Inhalte daran ausrichten.
 
 -   Personalisierung und Empfehlung: Sie wenden einfache Segmentierungs‑ und Assoziationsverfahren an, um Inhalte zielgruppenspezifisch zu empfehlen.
 
-- Erfolgsüberprüfung: Sie definieren und überprüfen relevante KPIs
+-   Erfolgsüberprüfung: Sie definieren und überprüfen relevante KPIs
 
 ## Prüfungsleistung
 
@@ -42,26 +42,21 @@ Die Studierenden können digitale Transformation verantwortungsbewusst und adres
 
 ## Logistik
 
-- Keine Anwesenheitspflicht
-- Teilnahme online möglich, keine Aufzeichnung
-- Moodle Einschreibepasswort: CommanderData!
-- ChatGPT & Co sind ausdrücklich erlaubt, aber Sie müssen das Protokoll teilen
+-   Teilnahme online möglich, keine Aufzeichnung
+-   Moodle Einschreibepasswort: CommanderData!
+-   ChatGPT & Co sind ausdrücklich erlaubt, aber Sie müssen das Protokoll teilen
 
 ## Definitionen: Was sind digitale Inhalte, Daten- und Medienprodukte?
 
-
 ## Definitionen: Was sind "innovative Gestaltungsformate"?
-
 
 ## Was bedeutet "überprüfbar erreichen"?
 
-
 ## Was bedeutet...
 
-- "Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und digitale Produkte konzipieren und entwickeln"?
-- "Informationen, Inhalte und Datenbestände erschließen, kuratieren, aufbereiten, lizenzieren und publizieren"?
-- "Daten, digitale Medien und Technologien zielgruppenspezifisch vermitteln und kommunizieren"?
-
+-   "Prozesse und Strukturen in der Informations- und Medienwirtschaft implementieren und digitale Produkte konzipieren und entwickeln"?
+-   "Informationen, Inhalte und Datenbestände erschließen, kuratieren, aufbereiten, lizenzieren und publizieren"?
+-   "Daten, digitale Medien und Technologien zielgruppenspezifisch vermitteln und kommunizieren"?
 
 ## Was sind Daten überhaupt?
 
@@ -81,12 +76,9 @@ Die Studierenden können digitale Transformation verantwortungsbewusst und adres
 
 ![](images/dikw-pyramid-removebg-preview.png)
 
-
-
 ## Toms Pyramide
 
 ![](images/tattoo.png)
-
 
 ## Relevanz in der Aufmerksamkeitsökonomie
 
@@ -100,12 +92,16 @@ Die Studierenden können digitale Transformation verantwortungsbewusst und adres
 
 ## Beispiel: Newsletter
 
-- Was ist das Ziel/sind die Ziele eines Newsletters?
-- Was sind mögliche KPIs?
+-   Was ist das Ziel/sind die Ziele eines Newsletters?
+-   Was sind mögliche KPIs?
+
+------------------------------------------------------------------------
 
 ## Wie funktioniert Data Mining?
 
 ![](images/CRISP-DM_Process_Diagram.png)
+
+------------------------------------------------------------------------
 
 ## Data Mining-Sprachen und -Systeme
 
@@ -118,15 +114,209 @@ Die Studierenden können digitale Transformation verantwortungsbewusst und adres
 -   Knime
 -   ...
 
-
 ## Welche Inhalte wünschen Sie sich noch?
 
+------------------------------------------------------------------------
+
+## Nächste Schritte
+
+-   Überlegen Sie sich ein Thema für ein digitales Produkt
+-   Identifizieren Sie Daten, die die Zielgruppe definieren
+
+------------------------------------------------------------------------
+
+# Sitzung 2: Daten-Akquise und -Überprüfung
+
+## Datenquellen: Primärdaten
+
+-   Interviews
+-   Umfragen
+-   Experimente / Messungen
+-   Tracking (eigene Tools oder Tools Dritter)
+
+------------------------------------------------------------------------
+
+## Datenquellen: Sekundärdaten
+
+-   Statistisches Bundesamt
+-   GfK, Brandindex, Statista
+-   Open-Data-Portale
+-   Google-Tools
+
+------------------------------------------------------------------------
+
+## Fragen zur Datenqualität
+
+-   Wer hat die Daten erhoben?
+-   Zu welchem Zweck?
+-   Ist die Stichprobe repräsentativ?
+-   Sind die Variablen klar definiert?
+-   Sind die Befragten voreingenommen?
+-   Wie zuverlässig (reliabel) und gültig (valide) sind die Messungen?
+
+------------------------------------------------------------------------
+
+## Reliabilität & Validität
+
+**Reliabilität**\
+- Misst das Instrument konsistent?\
+- Beispiel: Wiederholte Befragung führt zu ähnlichen Ergebnissen.
+
+**Validität**\
+- Misst das Instrument, was es messen soll?\
+- Beispiel: „Zufriedenheit“ darf nicht nur mit „Häufigkeit der Nutzung“ gleichgesetzt werden.
+
+------------------------------------------------------------------------
+
+## Häufige Probleme bei Stichproben
+
+-   **Convenience Sampling:** Auswahl der Personen, die leicht erreichbar sind – aber nicht repräsentativ.
+-   **Non-Response-Bias:** Bestimmte Gruppen nehmen systematisch nicht teil.
+-   **Kulturelle Antwortverzerrung:** Ein „Nein“ ist in manchen Kulturen sozial unerwünscht.
+-   **Soziale Erwünschtheit:** Menschen geben Antworten, die gut klingen – nicht unbedingt die Wahrheit.
+
+------------------------------------------------------------------------
+
+## Website-Umfrage
+
+![](images/hp-umfrage-website.png)
+
+------------------------------------------------------------------------
+
+## Umfrage vor Weiterleitung
+
+![](images/google-umfrage.png)
+
+------------------------------------------------------------------------
+
+## Soziale Erwünschtheit
+
+![](images/adblocker.png)
+
+------------------------------------------------------------------------
+
+## Glauben Sie das?
+
+![](images/b4p_Fake_News_gallery11-768x549-1.png)
+
+------------------------------------------------------------------------
+
+## Wie waren die Fragen eigentlich gestellt?
+
+![](images/b4p-fragen.png)
+
+------------------------------------------------------------------------
+
+## Wie kommt es zu dem Ergebnis?
+
+![](images/b4p-daten.png)
+
+------------------------------------------------------------------------
+
+## Beispiele für Umfrageverzerrungen
+
+| Bias                 | Beschreibung                         |
+|----------------------|--------------------------------------|
+| Yes Bias             | Tendenz, Aussagen zuzustimmen        |
+| No Bias              | Tendenz, Aussagen abzulehnen         |
+| Middle Bias          | Auswahl neutraler Antwortoptionen    |
+| Logical Response     | Überrationalisiertes Antworten       |
+| Convenience Sampling | Auswahl leicht erreichbarer Personen |
+
+------------------------------------------------------------------------
+
+## Weitere typische Verzerrungen
+
+-   **Recall Bias:** Falsche Erinnerung bei retrospektiven Fragen.
+-   **Survivorship Bias:** Nur „Überlebende“ werden betrachtet, z. B. erfolgreiche Start-ups.
+-   **Algorithmic Bias:** Verzerrte Trainingsdaten führen zu unfairen Modellen.
+-   **Availability Bias:** Häufig Gehörtes wird überschätzt.
+-   **Confirmation Bias:** Suche nach bestätigenden Informationen.
+
+------------------------------------------------------------------------
+
+## Der Bestätigungsfehler (Confirmation Bias)
+
+Wir suchen bevorzugt nach Daten, die unsere Meinung **bestätigen**.
+
+-   Widersprüchliche Daten werden ignoriert
+-   Unterstützende Daten werden überbewertet
+-   „Cherry Picking“ bei der Datenauswahl
+
+**Das größte Risiko für Verzerrung sind wir selbst.**
+
+------------------------------------------------------------------------
+
+## Survivorship Bias
+
+![](images/Survivorship-bias.svg.png)
+
+## Survivorship Bias
+
+-   (Verzerrung zugunsten der Überlebenden)
+-   Wir sehen nur die „Überlebenden“ – also erfolgreiche Fälle
+-   Gescheiterte Beispiele fehlen in den Daten
+-   Führt zu falschen Schlussfolgerungen über Erfolg
+
+*Beispiel:* Analyse erfolgreicher Start-ups ohne Berücksichtigung der gescheiterten.
+
+------------------------------------------------------------------------
+
+## Stichprobenverzerrung
+
+![](images/Ottenser_Hauptstraße.jpg)
+
+------------------------------------------------------------------------
+
+## Stichprobenverzerrung
+
+![](images/pinterest.png)
+
+------------------------------------------------------------------------
+
+## Fallbeispiel: Der Fehler der *Literary Digest*-Umfrage (1936)
+
+-   Befragte Leser, Auto- und Telefonbesitzer
+-   Ergebnis: Landon gewinnt gegen Roosevelt
+-   Realität: Roosevelt siegte deutlich
+-   Ursache: **Selection Bias** – wohlhabende Befragte waren überrepräsentiert
+
+------------------------------------------------------------------------
+
+## Stichprobenverzerrung
+
+-   Systematische Abweichung durch fehlerhafte Auswahl
+-   Auch große Stichproben helfen nicht, wenn sie nicht zufällig sind
+-   Beispiel: Online-Umfragen erreichen nur digital affine Personen
+
+------------------------------------------------------------------------
+
+## Gegenmaßnahmen
+
+-   Kritische Prüfung von Datenquellen und Methoden
+-   Kombination mehrerer Quellen (Triangulation)
+-   Dokumentation der Stichprobenverfahren
+-   Qualitative Validierung der Ergebnisse
+-   Randomisierung oder Stratifizierung
+-   Sensitivitätsanalyse: Wie stabil sind Ergebnisse bei Annahmeänderungen?
+-   Bewusstsein für eigene kognitiven Verzerrungen
+
+------------------------------------------------------------------------
+
+## Stratifizierung
+
+**Definition:**  
+Unterteilung der Grundgesamtheit in **Teilgruppen (Strata)** mit ähnlichen Merkmalen, bevor daraus zufällig gezogen wird.
+
+**Beispiel:**  
+Bei einer Umfrage in Deutschland werden die Teilnehmenden zunächst nach Geschlecht (m / w / d), Altersgruppen (18–29, 30–49, 50+), Region (Nord, Süd, Ost, West)  
+eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**.
+
+  
+------------------------------------------------------------------------
 
 
 ## Nächste Schritte
 
-- Überlegen Sie sich ein Thema für ein digitales Produkt
-- Identifizieren Sie Daten, die die Zielgruppe definieren
-
-# Woche 2
-
+-   Überlegen Sie sich ein Thema für ein digitales Produkt
+-   Identifizieren Sie Daten, die die Zielgruppe definieren
