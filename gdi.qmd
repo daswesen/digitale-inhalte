@@ -305,18 +305,75 @@ Wir suchen bevorzugt nach Daten, die unsere Meinung **bestätigen**.
 
 ## Stratifizierung
 
-**Definition:**  
+**Definition:**\
 Unterteilung der Grundgesamtheit in **Teilgruppen (Strata)** mit ähnlichen Merkmalen, bevor daraus zufällig gezogen wird.
 
-**Beispiel:**  
-Bei einer Umfrage in Deutschland werden die Teilnehmenden zunächst nach Geschlecht (m / w / d), Altersgruppen (18–29, 30–49, 50+), Region (Nord, Süd, Ost, West)  
+**Beispiel:**\
+Bei einer Umfrage in Deutschland werden die Teilnehmenden zunächst nach Geschlecht (m / w / d), Altersgruppen (18–29, 30–49, 50+), Region (Nord, Süd, Ost, West)\
 eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**.
 
-  
 ------------------------------------------------------------------------
-
 
 ## Nächste Schritte
 
 -   Überlegen Sie sich ein Thema für ein digitales Produkt
 -   Identifizieren Sie Daten, die die Zielgruppe definieren
+
+------------------------------------------------------------------------
+
+# Sitzung 3: Lean Content Strategy Canvas
+
+## Bitte beachten Sie die Templates im Moodle
+
+------------------------------------------------------------------------
+
+# Sitzung 4: Wie kommen Nutzer zu meinen Inhalten?
+
+## Review der Canvases aus Session 3
+
+------------------------------------------------------------------------
+
+## Wie finden Nutzer meine Inhalte?
+
+- ...
+
+------------------------------------------------------------------------
+
+## Push vs. Pull
+
+- Teilen Sie Ihnen bekannte Kanäle ein!
+
+------------------------------------------------------------------------
+
+## Inhalte als Lead-Magnet
+
+-   „Was bekomme ich, wenn ich Ihnen meine Aufmerksamkeit (oder E-Mail) gebe?“
+-   Typische Lead-Magneten: Whitepaper, Checklisten, Tools, Newsletter-Opt-ins, exklusive Dashboards.
+-   Verbindung zu Content Value Proposition?
+
+------------------------------------------------------------------------
+
+## Das LIFT-Modell
+
+![](images/lift-modell.png)
+
+------------------------------------------------------------------------
+
+## Micro-Conversions
+
+- Signup
+- Download
+- Scroll oder anderes Webpage Event
+- ...?
+
+------------------------------------------------------------------------
+
+## Owned / Earned / Paid Media
+
+- Owned = du kontrollierst es
+- Earned = andere reden über dich
+- Paid = du kaufst dir Aufmerksamkeit
+
+------------------------------------------------------------------------
+
+## Wie wird man Influencer?
