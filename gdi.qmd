@@ -327,9 +327,13 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 ------------------------------------------------------------------------
 
-# Sitzung 4: Wie kommen Nutzer zu meinen Inhalten?
+# Sitzung 4: Besprechung Canvases
 
 ## Review der Canvases aus Session 3
+
+------------------------------------------------------------------------
+
+# Sitzung 5: Wie kommen Nutzer zu meinen Inhalten?
 
 ------------------------------------------------------------------------
 
