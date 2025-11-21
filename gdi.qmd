@@ -339,13 +339,31 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 ## Wie finden Nutzer meine Inhalte?
 
-- ...
+-   ...
 
 ------------------------------------------------------------------------
 
 ## Push vs. Pull
 
-- Teilen Sie Ihnen bekannte Kanäle ein!
+-   Teilen Sie Ihnen bekannte Kanäle ein!
+
+------------------------------------------------------------------------
+
+## Owned / Earned / Paid Media
+
+-   Owned = du kontrollierst es
+-   Earned = andere reden über dich
+-   Paid = du kaufst dir Aufmerksamkeit
+
+------------------------------------------------------------------------
+
+## Wie wird man Influencer? (aus letzter Session)
+
+-   Rage Bait / Click Bait
+-   Community durch USP
+-   Regelmäßige Posts, jeden Tag, verschiedene Formate, mehrere Plattformen
+-   Stringenz im Content, Spezialisierung
+-   Shitstorms
 
 ------------------------------------------------------------------------
 
@@ -363,29 +381,80 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 ------------------------------------------------------------------------
 
-## Micro-Conversions
+## Die neue Herausforderung: AEO & GEO
 
-- Signup
-- Download
-- Scroll oder anderes Webpage Event
-- ...?
-
-------------------------------------------------------------------------
-
-## Owned / Earned / Paid Media
-
-- Owned = du kontrollierst es
-- Earned = andere reden über dich
-- Paid = du kaufst dir Aufmerksamkeit
+-   SEO: Search Engine Optimization
+-   AEO: Answer Engine Optimization
+-   AEO: Generative Engine Optimization
 
 ------------------------------------------------------------------------
 
-## Wie wird man Influencer?
+## Der Alligator
 
+![](images/alligator.png)
+
+
+## Real Estate geht verloren
+
+![](images/real-estate1.png)
+
+------------------------------------------------------------------------
+
+## Real Estate geht verloren
+
+![](images/real-estate2.png)
+
+------------------------------------------------------------------------
+
+## Real Estate geht verloren
+
+![](images/real-estate3.png)
+
+------------------------------------------------------------------------
+
+## Real Estate geht verloren
+
+![](images/chatgpt1.png)
+
+------------------------------------------------------------------------
+
+## Real Estate geht verloren
+
+![](images/chatgpt2.png)
+
+------------------------------------------------------------------------
+
+## Nutzerverhalten 2024–2025
+
+-   Große Verschiebung bei den Jüngeren: ChatGPT, TikTok und Instagram für Suche
+-   Claneo-Studie 2025:
+    -   **KI-Chatbots**: Nutzung 18 % (2024) → 33 % (2025)
+    -   **KI-Suchmaschinen** (Perplexity etc.) 14 % → 17 %
+    -   **Klassische Suchmaschinen** sinken leicht, bleiben aber dominant.\
+
+
+------------------------------------------------------------------------
+
+## Diskussion: Wo liegt meine Audience?
 
 ------------------------------------------------------------------------
 
 ## Nächste Schritte
 
-- Bitte überarbeiten Sie Ihre Canvases
-- Können wir schon Termine für Referate vereinbaren?
+-   Bitte überarbeiten Sie Ihre Canvases in Bezug auf die Kanäle
+
+
+# Erfolgsmessung
+
+------------------------------------------------------------------------
+
+## Micro-Conversions
+
+-   Signup
+-   Download
+-   Scroll oder anderes Webpage Event
+-   ...?
+
+
+# Data Storytelling
+
