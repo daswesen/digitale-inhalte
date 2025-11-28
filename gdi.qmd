@@ -507,18 +507,20 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 ------------------------------------------------------------------------
 
+## Tools: Tag Manager
+
+![](images/Google-Tag-Manager-und-Google-Analytics.png){width="800"}
+
 ## Tools: Matomo
 
-**Matomo**\
-- Datensouveränität, DSGVO-freundlich\
-- On-Premise möglich\
-- Transparentes Event-Tracking\
-- Klassisches Webanalyse-Modell - Demo
+-   Datensouveränität, DSGVO-freundlich
+-   On-Premise möglich
+-   Transparentes Event-Tracking
+-   Klassisches Webanalyse-Modell - Demo
 
 ## Tools: Google Analytics
 
-**Google Analytics (GA4)**\
-- Ereignisbasiertes Datenmodell\
+\- Ereignisbasiertes Datenmodell\
 - Automatische Events (Scrolls, Engagement, Outbound) - Kann auch Apps und Cross-Device Tracking - Moderne Metriken (Engaged Sessions, Predictive Signals)\
 - Demo
 
@@ -602,7 +604,6 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 - Messgröße, nicht das Ziel selbst\
 - Beispiel: „Conversion Rate der Registrierungsseite“
 
-**Kurzform:**\
 Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 ------------------------------------------------------------------------
