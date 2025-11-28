@@ -385,14 +385,13 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 -   SEO: Search Engine Optimization
 -   AEO: Answer Engine Optimization
--   AEO: Generative Engine Optimization
+-   GEO: Generative Engine Optimization
 
 ------------------------------------------------------------------------
 
 ## Der Alligator
 
 ![](images/alligator.png)
-
 
 ## Real Estate geht verloren
 
@@ -432,7 +431,6 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
     -   **KI-Suchmaschinen** (Perplexity etc.) 14 % → 17 %
     -   **Klassische Suchmaschinen** sinken leicht, bleiben aber dominant.\
 
-
 ------------------------------------------------------------------------
 
 ## Diskussion: Wo liegt meine Audience?
@@ -443,18 +441,306 @@ eingeteilt. Anschließend erfolgt die Zufallsauswahl **innerhalb jedes Stratum**
 
 -   Bitte überarbeiten Sie Ihre Canvases in Bezug auf die Kanäle
 
-
-# Erfolgsmessung
+# Sitzung 6: Erfolgsmessung
 
 ------------------------------------------------------------------------
 
-## Micro-Conversions
+## Warum Erfolgsmessung?
 
--   Signup
--   Download
--   Scroll oder anderes Webpage Event
--   ...?
+-   Ohne klare Ziele sind Metriken bedeutungslos
+-   Wie zahlt eine Website/App auf das Businessziel ein?
 
+------------------------------------------------------------------------
 
-# Data Storytelling
+## Ziele (Business Outcomes)
 
+-   Mehr Leads
+-   Mehr Anmeldungen
+-   Mehr aktive Nutzer (Werbeeinblendungen)
+-   Mehr Abschlüsse / Käufe
+
+------------------------------------------------------------------------
+
+## Conversions (Content-Abschlüsse)
+
+-   Newsletter-Anmeldung
+-   PDF-Download
+-   Formularabschluss
+-   Video bis 75 % (falls Hauptzweck)
+
+------------------------------------------------------------------------
+
+## Micro-Conversions (Frühindikatoren)
+
+-   Scrolltiefe
+-   Element Visibility
+-   Formularstart
+-   Klicks auf Module (Tabs, Slider, Quiz)
+-   Copy-to-Clipboard
+-   Video-Start oder 25 % Fortschritt
+
+------------------------------------------------------------------------
+
+## Keine guten KPIs
+
+-   Zeit auf Seite / Engaged Sessions
+-   Seiten/Sitzung
+
+------------------------------------------------------------------------
+
+## Scrolltiefe
+
+-   Erfasst, wie weit Nutzer tatsächlich auf einer Seite nach unten gelangen
+-   Geringe Scrolltiefe + hohe Absprungrate → falsches Thema oder schwacher Einstieg
+-   Hohe Scrolltiefe + wenige Conversions → Interesse vorhanden, CTA/Angebot zu schwach
+
+------------------------------------------------------------------------
+
+## Element Visibility
+
+-   Misst, ob ein Element im **Viewport** sichtbar war
+-   Relevante Elemente: CTA, Download-Box, Formular, Produkt-Highlights
+
+**Nutzen:**\
+- Sichtbarkeit ≠ Klicks\
+- Beispiel: „CTA wurde von 42 % gesehen, aber nur 3 % klickten“ → klare Optimierungsrichtung
+
+------------------------------------------------------------------------
+
+## Tools: Matomo
+
+**Matomo**\
+- Datensouveränität, DSGVO-freundlich\
+- On-Premise möglich\
+- Transparentes Event-Tracking\
+- Klassisches Webanalyse-Modell - Demo
+
+## Tools: Google Analytics
+
+**Google Analytics (GA4)**\
+- Ereignisbasiertes Datenmodell\
+- Automatische Events (Scrolls, Engagement, Outbound) - Kann auch Apps und Cross-Device Tracking - Moderne Metriken (Engaged Sessions, Predictive Signals)\
+- Demo
+
+------------------------------------------------------------------------
+
+## KPIs: Reichweite
+
+-   Unique Users
+-   Daily / Weekly / Monthly Active Users (DAU/WAU/MAU)
+-   Installs / First Opens (App)
+-   Traffic-Quellen
+-   Returning Visitor/User Rate
+-   Visibility in AEO/GEO (AI Overviews, Chatbot-Responses)
+
+------------------------------------------------------------------------
+
+## KPIs: Engagement
+
+-   Session Frequency (Sessions/User/Tag oder Woche)
+-   Average Session Duration
+-   Screens per Session (App)
+-   Scrolltiefe (Web)
+-   Element Visibility (Web)
+-   Video-Metriken: Play Rate, Watch Time, Completion
+-   Feature Usage (App)
+-   In-App Events (z. B. „Added to Favourites“, „Completed Task“)
+
+------------------------------------------------------------------------
+
+## KPIs: Interaktion (Micro-Conversions)
+
+-   CTA-Klicks
+-   Downloads (PDF, Asset, Datei)
+-   Formularstarts / Abbrüche
+-   Copy-to-Clipboard
+-   Onboarding Completion (App)
+-   Push-Notification Opt-in / Interaktion
+-   Deep-Link Events
+
+------------------------------------------------------------------------
+
+## KPIs: Conversion
+
+-   Registrierungen
+-   Abschlüsse / Purchases
+-   Conversion Rate pro Funnel-Schritt
+-   Assisted Conversions (Multi-Touch)
+-   Upgrade Rate (Free → Paid, App)
+-   In-App Purchase Rate
+
+------------------------------------------------------------------------
+
+## KPIs: Qualität & Stabilität (App)
+
+-   Crash Rate
+-   Error Events
+-   App Start Time
+-   Load Time / Latency
+-   Failed Transactions
+-   Rage Clicks / Dead Clicks (optional, Web & App)
+
+------------------------------------------------------------------------
+
+## KPIs: Bindung & Churn
+
+-   Retention (Day 1 / Day 7 / Day 30)
+-   Cohort Retention
+-   Churn Rate
+-   Re-Activation Rate
+-   Push Notification Re-Engagement
+
+## KPI vs. Ziel: Was ist der Unterschied?
+
+**Ziel**\
+- Beschreibt *was* erreicht werden soll\
+- Ergebnisorientiert\
+- Beispiel: „Mehr Registrierungen für meinen Kurs“
+
+**KPI**\
+- Beschreibt *wie gut* wir auf dem Weg zum Ziel sind\
+- Messgröße, nicht das Ziel selbst\
+- Beispiel: „Conversion Rate der Registrierungsseite“
+
+**Kurzform:**\
+Ziele definieren die Richtung – KPIs messen den Fortschritt.
+
+------------------------------------------------------------------------
+
+## Beispiele für Ziele und passende KPIs
+
+**Ziel:** Mehr aktive Nutzer\
+**KPI:** Daily/Weekly Active Users (DAU/WAU)
+
+**Ziel:** Mehr Leads\
+**KPI:** Formular-Conversion-Rate
+
+**Ziel:** Bessere Content-Performance\
+**KPI:** Scrolltiefe, Sichtbarkeit, Interaktionsraten
+
+**Ziel:** Höhere Nutzerbindung\
+**KPI:** 7-Tage-Retention, Churn Rate
+
+## KPIs für Artikel / Blogposts
+
+-   Scrolltiefe
+-   Element Visibility (v. a. CTA / Weiterführende Links)
+-   SERP-Klickrate
+-   Returning Visitor Rate
+-   Shares / Saves
+
+------------------------------------------------------------------------
+
+## KPIs für Videos
+
+-   Play Rate
+-   Average Watch Time
+-   Completion Rate
+-   Drop-off Points
+-   CTA-Klick nach Videoende
+
+------------------------------------------------------------------------
+
+## KPIs für PDFs / Whitepaper / Downloads
+
+-   Formularstart
+-   Formularabschluss
+-   Download Rate
+-   Assisted Conversions
+-   Sichtbarkeit der Download-Box (Element Visibility)
+
+------------------------------------------------------------------------
+
+## KPIs für interaktive Inhalte (Quiz, Tools, Rechner)
+
+-   Task Success Rate
+-   Feature Usage
+-   Interaktionen (Tabs, Buttons, Module)
+-   Conversion nach Nutzung
+-   Time on Task
+
+------------------------------------------------------------------------
+
+## KPIs für App-Features
+
+-   DAU/WAU
+-   Feature Usage Events
+-   Onboarding Completion
+-   Retention (Day 1 / 7 / 30)
+-   Churn Rate
+
+------------------------------------------------------------------------
+
+## KPIs für Newsletter / E-Mails
+
+-   Open Rate
+-   Click Rate
+-   Unsubscribe Rate
+-   Conversion Rate (z. B. Download, Anmeldung)
+-   Deep-Link Engagement
+
+------------------------------------------------------------------------
+
+## Fallstricke bei der Interpretation
+
+-   „Mehr Traffic“ ist kein sinnvolles Ziel
+-   Verweildauer kann sowohl positive als auch negative Gründe haben
+-   Scrolltiefe ≠ qualitatives Lesen
+-   Event-Implementierung muss sauber sein (Schwellen, Debounce, Deduplikation)
+-   Attribution beeinflusst Ergebnisse stärker als erwartet
+-   Kleine Stichproben \>\> keine belastbaren Schlüsse
+
+------------------------------------------------------------------------
+
+## Machine Learning-Modell auf Basis von Scrolltiefe
+
+![](images/model_vs_data.png)
+
+## Machine Learning-Modell auf Basis von Scrolltiefe
+
+![](images/page_heatmap.png)
+
+------------------------------------------------------------------------
+
+## Übung
+
+**Für Ihre eigenen digitalen Inhalte:**\
+1 Outcome\
+2 Conversions\
+3 Micro-Conversions definieren
+
+# Sitzung 7: A/B Testing
+
+------------------------------------------------------------------------
+
+# Sitzung 8: Data Mining
+
+## Was ist Data Mining?
+
+## Warum Data Mining?
+
+## Assoziationsanalyse
+
+## Naive Bayes
+
+------------------------------------------------------------------------
+
+# Sitzung 9: Datenvisualisierung
+
+------------------------------------------------------------------------
+
+# Sitzung 10:
+
+------------------------------------------------------------------------
+
+# Sitzung 11:
+
+------------------------------------------------------------------------
+
+# Sitzung 12:
+
+------------------------------------------------------------------------
+
+# Sitzung 13:
+
+------------------------------------------------------------------------
