@@ -706,9 +706,9 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 ## Übung
 
 **Für Ihre eigenen digitalen Inhalte:**\
-1 Outcome\
-2 Conversions\
-3 Micro-Conversions definieren
+1. Outcome\
+2. Conversions\
+3. Micro-Conversions definieren
 
 # Sitzung 7: A/B Testing
 
