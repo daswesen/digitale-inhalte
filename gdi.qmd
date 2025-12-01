@@ -712,7 +712,233 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 # Sitzung 7: A/B Testing
 
-------------------------------------------------------------------------
+## Was ist Inferenzstatistik?
+
+-   Von der Stichprobe auf die Grundgesamtheit schließen
+-   Berücksichtigt Zufallsfehler und Unsicherheit
+-   Zentral: **Wahrscheinlichkeit**, **Stichprobenverteilung**, **Testen von Hypothesen**
+
+## Würfeln und der Zufall: Zentraler Grenzwertsatz
+
+-   Jeder Studierende würfelt 10x → 1 Mittelwert
+-   Wiederholung über viele → Verteilung der Mittelwerte
+-   Was ist der Erwartungswert?
+
+## Würfeln und der Zufall: Zentraler Grenzwertsatz
+
+-   Jeder Studierende würfelt 10x → 1 Mittelwert
+-   Wiederholung über viele → Verteilung der Mittelwerte
+-   Erwartungswert (fairer Würfel): 3.5
+
+## Würfeln und der Zufall: Zentraler Grenzwertsatz
+
+```{r}
+# Simulation des Zentralen Grenzwertsatzes
+n_samples <- 1000
+sample_means <- numeric(n_samples)
+
+for(i in 1:n_samples) {
+  # Ziehe 30 Werte aus einer nicht-normalverteilten Grundgesamtheit
+  sample_data <- runif(30, min=1, max=6)  # Gleichverteilung
+  sample_means[i] <- mean(sample_data)
+}
+
+# Visualisierung der Verteilung der Stichprobenmittelwerte
+hist(sample_means, breaks=30, main="Verteilung der Stichprobenmittelwerte",
+     xlab="Mittelwert", probability=TRUE)
+curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)), 
+      add=TRUE, col="red", lwd=2)
+```
+
+## Warum ist das wichtig?
+
+-   Diese Verteilung erlaubt uns Aussagen über:
+    -   Vertrauensbereiche (Konfidenzintervalle)
+    -   Signifikanztests (z. B. t-Test)
+-   **Beispiel**: Ist ein Würfel gezinkt?
+-   Stichprobe: z. B. Mittelwert = 3.8
+-   **Ist dieser Unterschied Zufall oder nicht?**
+
+## Hypothesentesten: Grundlagen
+
+-   **Nullhypothese (H₀)**: Annahme keines Effekts/Unterschieds
+-   **Alternativhypothese (H₁)**: Annahme eines Effekts/Unterschieds
+-   **Arten von Hypothesen**:
+    -   Ungerichtete Hypothesen (zweiseitig): µ₁ ≠ µ₂
+    -   Gerichtete Hypothesen (einseitig): µ₁ \> µ₂ oder µ₁ \< µ₂
+
+## Die Logik des Hypothesentestens
+
+-   **Indirekter Beweis**: Wir falsifizieren H₀ statt H₁ zu beweisen
+-   **Analogie zum Gerichtsprozess**: "Unschuldig bis zum Beweis der Schuld"
+-   **Entscheidungsbaum**: Wann wird H₀ beibehalten oder verworfen?
+
+## Signifikanzniveau und p-Wert
+
+-   **Signifikanzniveau α**: Vorab festgelegte Irrtumswahrscheinlichkeit (typisch: 0.05)
+-   **p-Wert**: Wahrscheinlichkeit, die beobachteten (oder extremeren) Daten unter H₀ zu erhalten
+-   **Entscheidungsregel**: Verwerfe H₀, wenn p \< α
+-   **Kritische Werte**: Alternative Darstellung der Entscheidungsregel
+
+## Von der Stichprobenverteilung zum t-Test
+
+-   Die **Stichprobenverteilung der Mittelwerte** zeigt: Wie stark Mittelwerte **zufällig schwanken**, selbst wenn H₀ stimmt
+-   Diese Schwankung hat eine Streuung: den **Standardfehler (SE)**
+
+$$ SE = \frac{s}{\sqrt{n}} $$
+
+-   Der t-Test prüft, ob der beobachtete Mittelwert **außerhalb** dieser erwarteten Schwankung liegt
+
+## Der Standardfehler
+
+-   **Definition**: Standardabweichung der Stichprobenmittelwerte
+-   **Praktische Bedeutung**: Je größer die Stichprobe, desto präziser die Schätzung
+
+```{r echo=TRUE}
+set.seed(422)
+würfe <- sample(1:6, 60, replace = TRUE)
+se <- sd(würfe) / sqrt(length(würfe))
+se
+```
+
+```{r}
+mean(würfe)
+```
+
+## t-Test in R (Einzelstichprobe)
+
+::: small
+```{r}
+mean(würfe)
+t.test(würfe, mu = 3.5)
+```
+:::
+
+## Interpretation des t-Tests
+
+-   **p \< 0.05** → Ablehnung der Nullhypothese (Würfel evtl. gezinkt)
+-   **p ≥ 0.05** → Kein ausreichender Hinweis auf Manipulation
+
+## Was ist denn nun „signifikant“?
+
+-   Ein signifikantes Ergebnis heißt nicht, dass es „wichtig“ ist
+-   Es heißt nur: Unterschied ist **nicht gut durch Zufall erklärbar**
+-   Immer im Kontext interpretieren (Effektgröße, Relevanz)
+
+## Konfidenzintervalle
+
+-   **Definition**: Bereich, der mit einer bestimmten Wahrscheinlichkeit den wahren Parameter enthält
+
+-   **Interpretation**: Was bedeutet ein 95%-Konfidenzintervall?
+
+-   **Zusammenhang mit Hypothesentests**: Enthält ein 95%-KI den Wert der Nullhypothese?
+
+## Experimentelles Design
+
+-   **Wichtige Konzepte**: Randomisierung, Kontrolle, Randomized Control Trial (RCT)
+-   **Experimentierfehler vermeiden**:
+    -   Placebo-Effekt
+    -   Hawthorne-Effekt
+    -   Observer Bias
+    -   Selection Bias
+
+## Ursprung der t-Verteilung: William S. Gosset
+
+-   **William S. Gosset** war Chemiker und Statistiker bei der Guinness-Brauerei (Anfang 1900er).
+-   Aufgabe: Qualitätskontrolle (z. B. Stärkegehalt von Gerste messen).
+-   Problem: Nur **kleine Stichproben** pro Tag (z. B. n = 4 oder 5).
+-   Damalige Statistik: Basierte auf **großen Stichproben** und der **Normalverteilung**.
+
+## Das statistische Problem
+
+-   Ziel: Testen, ob der Mittelwert von Proben vom Sollwert abweicht.
+-   Normalformel: \[ \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \] → funktioniert nur, wenn **σ** (Standardabweichung der Grundgesamtheit) bekannt ist.
+-   Bei kleinen n musste Gosset stattdessen **s** (Stichprobenstandardabweichung) verwenden: $$  \frac{\bar{x} - \mu}{s / \sqrt{n}}$$
+-   Folge: Diese Teststatistik **folgt nicht mehr der Normalverteilung**.
+
+## Die Lösung
+
+-   Gosset zeigte: Die neue Verteilung hängt von der Anzahl an Beobachtungen ab → **Freiheitsgrade (n−1)**.
+-   Daraus entstand eine neue Verteilung: die **t-Verteilung mit df**.
+-   Diese berücksichtigt die **größere Unsicherheit bei kleinen n** durch dickere „Schwänze“ (heavy tails).
+
+## Warum „Student“?
+
+-   Guinness verbot es Mitarbeitern, unter eigenem Namen zu publizieren.
+-   Gosset veröffentlichte 1908 unter dem Pseudonym **„Student“**:
+    -   *„The Probable Error of a Mean“* (in *Biometrika*)
+-   Der t-Test wurde dadurch bekannt als **„Student’s t-Test“**.
+
+## Visualisierung unterschiedlicher t-Verteilungen
+
+```{r}
+    # Vergleich von t-Verteilungen mit unterschiedlichen Freiheitsgraden
+    x <- seq(-4, 4, length.out = 1000)
+    y_normal <- dnorm(x)
+    y_t1 <- dt(x, df = 1)  # 1 Freiheitsgrad
+    y_t5 <- dt(x, df = 5)  # 5 Freiheitsgrade
+    y_t30 <- dt(x, df = 30)  # 30 Freiheitsgrade
+
+    plot(x, y_normal, type="l", lwd=2, col="black", 
+         main="t-Verteilungen im Vergleich zur Normalverteilung",
+         xlab="x", ylab="Wahrscheinlichkeitsdichte")
+    lines(x, y_t1, lwd=2, col="red")
+    lines(x, y_t5, lwd=2, col="blue")
+    lines(x, y_t30, lwd=2, col="green")
+    legend("topright", 
+           legend=c("Normalverteilung", "t (df=1)", "t (df=5)", "t (df=30)"),
+           col=c("black", "red", "blue", "green"), lwd=2)
+```
+
+## Freiheitsgrade (Degrees of Freedom, df)
+
+-   Anzahl der **unabhängigen Informationen**, die zur Schätzung einer Größe verfügbar sind.
+-   Bei der Berechnung der **Stichprobenvarianz** geht 1 Freiheitsgrad verloren: \[ df = n - 1 \] (weil der Mittelwert bereits aus den Daten berechnet wurde)
+-   Freiheitsgrade bestimmen die **Form der t-Verteilung**:
+    -   Wenige df → **dickere Randbereiche**
+    -   Viele df → t-Verteilung nähert sich der **Normalverteilung**
+
+## Freiheitsgrade (Degrees of Freedom, df)
+
+-   Freiheitsgrade sind wichtig für:
+    -   Auswahl des richtigen **kritischen t-Werts**
+    -   **Vertrauensintervalle** und **p-Werte**
+
+## Arten von t-Tests
+
+-   **Einstichproben-t-Test**: Vergleich mit bekanntem oder hypothetischem Wert
+    -   Anwendungsbeispiel: Entspricht der mittlere Blutzuckerwert einer Patientengruppe dem Normalwert?
+    -   Formel: $t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$
+
+## Arten von t-Tests
+
+-   **Zweistichproben-t-Test (unabhängig)**: Vergleich zweier unabhängiger Gruppen
+    -   Anwendungsbeispiel: Unterscheiden sich die Testergebnisse zweier unterschiedlicher Lernmethoden?
+    -   Formel bei gleichen Varianzen: $t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
+
+## Arten von t-Tests
+
+-   **Gepaarter t-Test (abhängig)**: Vergleich verbundener Messungen
+    -   Anwendungsbeispiel: Vor-Nach-Vergleich einer Intervention
+    -   Formel: $t = \frac{\bar{d}}{s_d / \sqrt{n}}$
+
+## Arten von t-Tests
+
+-   **Welch-Test**: Variante für ungleiche Varianzen
+    -   Anwendungsbeispiel: Wenn die Streuung in beiden Gruppen deutlich unterschiedlich ist
+    -   Angepasste Freiheitsgrade
+
+## Fehler beim Hypothesentesten
+
+-   **Fehler 1. Art (α-Fehler)**: Falsch-positive Entscheidung (H₀ fälschlicherweise verwerfen)
+
+-   **Fehler 2. Art (β-Fehler)**: Falsch-negative Entscheidung (H₀ fälschlicherweise beibehalten)
+
+-   **Power (1-β)**: Wahrscheinlichkeit, einen tatsächlich vorhandenen Effekt zu entdecken
+
+-   
+
+    ## **Balanceakt**: Abwägung zwischen α und β
 
 # Sitzung 8: Data Mining
 
@@ -727,6 +953,961 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 ------------------------------------------------------------------------
 
 # Sitzung 9: Datenvisualisierung
+
+## Warum Datenvisualisierung?
+
+The greatest value of a picture is when it forces us to notice what we never expected to see. (John Tukey)
+
+## Warum Datenvisualisierung, Teil 2
+
+![](images/Anscombe's_quartet_3.svg.png)
+
+## 5 wichtige Schritte
+
+1.  Was ist der Kontext?
+    -   An wen wird kommuniziert?
+    -   Was soll der Empfänger wissen oder tun?
+    -   Welche Daten sind vorhanden, um den Case zu untermauern?
+
+## 5 wichtige Schritte
+
+2.  Welche ist das passendste Visualierung?
+    -   Ein oder zwei Zahlen, die im Fokus stehen? =\> Text!
+    -   Liniendiagramme für continuous data
+    -   Säulendiagramme für kategoriale Daten, müssen bei 0 anfangen
+    -   Die Beziehungen der Daten untereinander bestimmen die Visualisierung, sofern Sie mehr als eine Variable haben
+    -   Vermeiden Sie Tortendiagramme, Donuts, 3D, zweite Y-Achsen
+
+## 5 wichtige Schritte
+
+3.  Entfernen Sie „Clutter"
+    1.  Entfernen Sie alles, das keinen informativen Mehrwert hat (z.B. Farben für die Ästhetik)
+    2.  Arbeiten Sie mit freiem Raum
+
+## 5 wichtige Schritte
+
+4.  Fokussieren Sie die Aufmerksamkeit, wo Sie hin soll
+    -   Größe, Position und, ja, manchmal auch Farbe nutzen um zu signalisieren, was wichtig ist
+    -   Wohin gehen die Augen?
+
+## 5 wichtige Schritte
+
+::::: columns
+::: {.column width="60%"}
+5.  Nutzen Sie Storytelling
+    -   Niemand will einfach nur Auflistungen von Zahlen und Diagrammen sehen.
+    -   Schreiben Sie einen Plot. Anfang, eventuell sogar einen Twist, und ein Ende mit Call to Action (in der Wissenschaft reicht eine Diskussion ☺)
+    -   Bitte arbeiten Sie nicht einfach nur mechanisch alles ab, was Sie können.
+:::
+
+::: {.column width="40%"}
+![](images/storytelling.png)
+:::
+:::::
+
+## Redundant Coding
+
+::::: columns
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=10, out.width="100%"}
+# Pakete laden
+library(ggplot2)
+
+# Pakete laden
+library(ggplot2)
+
+# Linker Plot (mit Kreisen für alle Arten)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_manual(values = c("setosa" = "#d8b365", 
+                               "virginica" = "#5ab4ac", 
+                               "versicolor" = "#a6cee3")) +
+  scale_x_continuous(limits = c(4, 8), breaks = seq(4, 8, 1)) +
+  scale_y_continuous(limits = c(2, 4.5), breaks = seq(2, 4.5, 0.5)) +
+  labs(x = "sepal length", y = "sepal width") +
+  theme_bw() +
+  theme(legend.position = "right",
+        legend.title = element_blank(),
+        panel.grid.minor = element_blank(),
+        aspect.ratio = 1) # Macht den Plot quadratisch
+
+# Um den Plot zu speichern mit quadratischen Abmessungen
+# ggsave("iris_plot_left.png", width = 7, height = 7)
+```
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=10, out.width="100%"}
+# Pakete laden
+library(ggplot2)
+
+# Rechter Plot (mit unterschiedlichen Symbolen für jede Art)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
+                 color = Species, shape = Species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_manual(values = c("setosa" = "#a6cee3", 
+                               "virginica" = "#5ab4ac", 
+                               "versicolor" = "#d8b365")) +
+  scale_shape_manual(values = c("setosa" = 16,  # Kreis (gefüllt)
+                               "virginica" = 21, # Kreis (leer)
+                               "versicolor" = 22)) + # Quadrat (leer)
+  scale_x_continuous(limits = c(4, 8), breaks = seq(4, 8, 1)) +
+  scale_y_continuous(limits = c(2, 4.5), breaks = seq(2, 4.5, 0.5)) +
+  labs(x = "sepal length", y = "sepal width") +
+  theme_bw() +
+  theme(legend.position = "right",
+        legend.title = element_blank(),
+        panel.grid.minor = element_blank(),
+        aspect.ratio = 1) # Macht den Plot quadratisch
+
+# Um den Plot zu speichern mit quadratischen Abmessungen
+# ggsave("iris_plot_right.png", width = 7, height = 7)
+```
+:::
+:::::
+
+## Weißer Space ist gut… aber nicht zu viel!
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+# Benötigte Pakete
+library(ggplot2)
+library(dplyr)
+
+# Daten vorbereiten (Titanic-Datensatz)
+# Falls nicht vorhanden: install.packages("titanic")
+library(titanic)
+data("titanic_train")
+
+# Daten aufbereiten
+titanic_data <- titanic_train %>%
+  mutate(
+    Sex = factor(Sex, levels = c("female", "male")),
+    Survived = factor(ifelse(Survived == 1, "survived", "died")),
+    Pclass = factor(Pclass, labels = c("1st", "2nd", "3rd"))
+  ) %>%
+  count(Pclass, Sex, Survived) %>%
+  rename(count = n)
+
+# Linker Plot (komplett ohne Linien, "ugly")
+ggplot(titanic_data, aes(x = Sex, y = count, fill = Sex)) +
+  geom_col() +
+  facet_grid(Pclass ~ Survived) +
+  scale_fill_manual(values = c("female" = "#E69F00", "male" = "#4472C4")) +
+  scale_y_continuous(limits = c(0, 180), breaks = c(0, 50, 100, 150)) +
+  labs(y = "count") +
+  theme(
+    legend.position = "none",
+    panel.spacing = unit(0.5, "mm"),      # Minimaler Abstand zwischen Panels
+    panel.grid.major = element_blank(),   # Keine Hauptgitterlinien
+    panel.grid.minor = element_blank(),   # Keine Nebengitterlinien
+    panel.border = element_blank(),       # Kein Panelrahmen
+    panel.background = element_blank(),   # Kein Panelhintergrund
+    strip.background = element_blank(),   # Kein Hintergrund für Beschriftungen
+    strip.text = element_text(hjust = 0.5, size = 10),
+    axis.line = element_blank(),          # Keine Achsenlinien
+    axis.ticks = element_blank(),         # Keine Achsenmarkierungen
+    axis.title.x = element_blank(),
+    plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "mm")  # Minimaler Außenabstand
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+# Benötigte Pakete
+library(ggplot2)
+library(dplyr)
+
+# Daten vorbereiten (Titanic-Datensatz)
+# Falls nicht vorhanden: install.packages("titanic")
+library(titanic)
+data("titanic_train")
+
+# Daten aufbereiten
+titanic_data <- titanic_train %>%
+  mutate(
+    Sex = factor(Sex, levels = c("female", "male")),
+    Survived = factor(ifelse(Survived == 1, "survived", "died")),
+    Pclass = factor(Pclass, labels = c("1st", "2nd", "3rd"))
+  ) %>%
+  count(Pclass, Sex, Survived) %>%
+  rename(count = n)
+
+# Rechter Plot (mehr Weißraum, besser lesbar)
+ggplot(titanic_data, aes(x = Sex, y = count, fill = Sex)) +
+  geom_col() +
+  facet_grid(Pclass ~ Survived) +
+  scale_fill_manual(values = c("female" = "#E69F00", "male" = "#4472C4")) +
+  scale_y_continuous(limits = c(0, 180), breaks = c(0, 50, 100, 150)) +
+  labs(y = "count") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.spacing = unit(5, "mm"),     # Mehr Abstand zwischen Panels
+    panel.background = element_rect(fill = "#F1F1F1", color = NA), # Hellgrauer Hintergrund
+    strip.background = element_rect(fill = "white", color = NA), # Weißer Streifen für Überschriften
+    strip.text = element_text(hjust = 0.5, size = 10),
+    axis.title.x = element_blank(),
+    plot.margin = unit(c(5, 5, 5, 5), "mm")  # Mehr Außenabstand
+  )
+```
+:::
+:::::
+
+## Highlighting
+
+```{r}
+# Benötigte Pakete laden
+library(nycflights23)
+library(dplyr)
+library(ggplot2)
+
+# Mittlere Ankunftsverspätung pro Fluggesellschaft berechnen
+airline_delays <- flights %>%
+  group_by(carrier) %>%
+  summarise(mean_delay = mean(arr_delay, na.rm = TRUE)) %>%
+  #filter(mean_delay > 0) %>%
+  # Fluggesellschaftsnamen hinzufügen
+  left_join(airlines, by = "carrier") %>%
+  # Nach Verspätung sortieren
+  arrange(mean_delay)
+
+# Einen Vektor für Farben erstellen (alle grau außer ExpressJet, das hervorgehoben wird)
+# ExpressJet hat im Datensatz den Code "EV"
+farben <- ifelse(airline_delays$carrier == "G4", "#B22222", "#AAAAAA")
+
+# Horizontalen Balkenplot erstellen
+ggplot(airline_delays, aes(x = reorder(name, mean_delay), y = mean_delay)) +
+  geom_col(fill = farben) +
+  coord_flip() +  # Für horizontale Balken
+  labs(
+    title = "",
+    x = "",
+    y = "mean arrival delay (min.)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  )
+```
+
+## Wie identifiziert man das richtige Diagramm?
+
+![](images/overview.png)
+
+## Scatter Plot / Streudiagramm
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Beziehung zwischen zwei kontinuierlichen Variablen
+-   Jeder Punkt = eine Beobachtung
+-   Erkennt Muster, Cluster, Ausreißer und Korrelationen
+-   Benötigt numerische X/Y-Achsen
+-   Dritte Dimension durch Punktgröße/Farbe möglich
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(42)
+scatter_data <- data.frame(
+  x = rnorm(100),
+  y = rnorm(100),
+  gruppe = sample(LETTERS[1:3], 100, replace = TRUE)
+)
+# Korrelation hinzufügen
+scatter_data$y <- scatter_data$y + scatter_data$x - 0.7 + rnorm(100, 0, 0.5)
+ggplot(scatter_data, aes(x = x, y = y, color = gruppe)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal() +
+  labs(x = "Variable X", y = "Variable Y", color = "Gruppe")
+```
+:::
+:::::
+
+## Korrelationsmatrix
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Korrelationsstärke zwischen Variablen
+-   Farbe/Größe visualisiert Richtung und Stärke
+-   Unterscheidet klar positive/negative Korrelationen
+-   Identifiziert Muster und redundante Variablen
+-   Essentiell für explorative Datenanalyse
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+library(reshape2)
+
+# Direkt eine gültige Korrelationsmatrix erstellen
+set.seed(123)
+vars <- 5
+varNames <- LETTERS[1:vars]
+
+# Simulierte Daten direkt erstellen
+sim_data <- data.frame(
+  A = rnorm(100),
+  B = rnorm(100),
+  C = rnorm(100),
+  D = rnorm(100),
+  E = rnorm(100)
+)
+# Korrelationen hinzufügen
+sim_data$B <- sim_data$B + sim_data$A - 0.7 + rnorm(100, 0, 0.5)
+sim_data$C <- sim_data$C - sim_data$A - 0.4 + rnorm(100, 0, 0.5)
+sim_data$D <- sim_data$D + sim_data$B - 0.6 + rnorm(100, 0, 0.5)
+sim_data$E <- sim_data$E - sim_data$C - 0.5 + sim_data$D - 0.3 + rnorm(100, 0, 0.5)
+
+# Korrelationsmatrix berechnen
+cormat <- round(cor(sim_data), 2)
+melted_cormat <- melt(cormat)
+
+ggplot(melted_cormat, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "firebrick", high = "steelblue", mid = "white", 
+                     midpoint = 0, limit = c(-1,1)) +
+  geom_text(aes(label = round(value, 2)), color = "black", size = 3) +
+  theme_minimal() +
+  coord_equal() +
+  labs(fill = "Korrelation")
+```
+:::
+:::::
+
+## Venn-Diagramm
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt gemeinsame und einzigartige Elemente
+-   Überschneidungen visualisieren Gemeinsamkeiten
+-   Ideal für Vergleich von Kategorien/Merkmalen
+-   Funktioniert am besten mit 2-3 Gruppen
+-   Wird mit mehr als 5 Gruppen unübersichtlich
+:::
+
+::: {.column width="40%"}
+![](images/relationship_venn_4_3.png)
+:::
+:::::
+
+## UpSet Diagram
+
+::::: columns
+::: {.column width="60%"}
+-   Alternative für komplexe Überschneidungen
+-   Skalierbarer als klassische Venn-Diagramme
+-   Balken visualisieren Überschneidungsgrößen
+-   Punkte zeigen beteiligte Mengen
+-   Ideal für 4+ Gruppen/komplexe Beziehungen
+:::
+
+::: {.column width="40%"}
+![](images/upset.png)
+:::
+:::::
+
+## Sankey Diagram
+
+::::: columns
+::: {.column width="60%"}
+-   Visualisiert Flüsse zwischen Kategorien
+-   Pfeilbreite zeigt Volumen/Wert
+-   Ideal für Verteilungen und Prozesse
+-   Zeigt Herkunft und Ziel von Ressourcen
+-   Verdeutlicht Proportionen über mehrere Stufen
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+library(ggalluvial)
+# Sankey/Alluvial Diagramm
+sankey_data <- data.frame(
+  Quelle = rep(c("A", "B", "C"), times = c(3, 2, 2)),
+  Ziel = c("X", "Y", "Z", "X", "Y", "Y", "Z"),
+  Wert = c(5, 3, 2, 2, 3, 1, 4)
+)
+ggplot(sankey_data, aes(axis1 = Quelle, axis2 = Ziel, y = Wert)) +
+  geom_alluvium(aes(fill = Quelle), width = 1/3) +
+  geom_stratum(width = 1/3, fill = "grey80", color = "grey50") +
+  geom_text(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_fill_brewer(palette = "Set1") +
+  theme_minimal() +
+  labs(x = NULL, y = NULL) +
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank())
+```
+:::
+:::::
+
+## Horizontal Bar Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Vergleicht Werte über Kategorien hinweg
+-   Horizontale Anordnung für bessere Lesbarkeit
+-   Ideal für lange Namen oder viele Kategorien
+-   Perfekt für Rankings und Wertvergleiche
+-   Einfach und übersichtlich
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+hbar_data <- data.frame(
+  kategorie = c("Kategorie mit sehr langem Namen A", 
+                "Kategorie B", 
+                "Kategorie C", 
+                "Kategorie D", 
+                "Kategorie E"),
+  wert = c(85, 72, 56, 41, 25)
+)
+ggplot(hbar_data, aes(x = reorder(kategorie, wert), y = wert)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = NULL, y = "Wert") +
+  geom_text(aes(label = wert), hjust = -0.2) +
+  ylim(0, max(hbar_data$wert) - 1.15)
+```
+:::
+:::::
+
+## Column Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Vergleicht Werte mit vertikalen Balken
+-   Ideal für Ranking und Leistungsvergleiche
+-   Funktioniert gut mit wenigen, klaren Kategorien
+-   Kurze, lesbare Beschriftungen bevorzugen
+-   Konsistente Nullbasislinie für faire Vergleiche
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+column_data <- data.frame(
+  kategorie = factor(c("A", "B", "C", "D", "E"), levels = c("A", "B", "C", "D", "E")),
+  wert = c(85, 72, 56, 41, 25)
+)
+ggplot(column_data, aes(x = kategorie, y = wert, fill = kategorie)) +
+  geom_bar(stat = "identity", width = 0.7) +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal() +
+  labs(x = NULL, y = "Wert") +
+  theme(legend.position = "none") +
+  geom_text(aes(label = wert), vjust = -0.5) +
+  ylim(0, max(column_data$wert) - 1.1)
+```
+:::
+:::::
+
+## Vergleich: Horizontal vs. Vertical Bar Charts
+
+| Feature | Horizontal | Vertical |
+|----|----|----|
+| Best for | Long category labels, many items | Time-based or logical progression |
+| Readability | Easier when labels are long | Requires rotation for long labels |
+| Use case | Rankings, survey responses | Trends over time, grouped comparisons |
+| Scan direction | Left to right | Bottom to top |
+| Visual space | Efficient for many categories | Better for fewer, high-impact bars |
+
+## Circular Bar Plot
+
+::::: columns
+::: {.column width="60%"}
+-   Kreisförmige Darstellung von Werten mit Kategorien
+-   Farbcodierung zeigt Gruppenzugehörigkeit
+-   Kompakte Darstellung von Mustern und Beziehungen
+-   Ideal für visuelles Storytelling
+-   Beschriftungen sparsam und deutlich halten
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+library(dplyr)
+data <- data.frame(
+  category = rep(LETTERS[1:4], each = 5),
+  subcategory = rep(1:5, 4),
+  value = sample(20:100, 20)
+)
+ggplot(data, aes(x = subcategory, y = value, fill = category)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  coord_polar() +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+```
+:::
+:::::
+
+## Diverging Bars
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Abweichungen in zwei Richtungen
+-   Links/rechts von zentraler Basislinie
+-   Ideal für Kontraste (positiv/negativ)
+-   Zeigt Gleichgewicht vs. Ungleichgewicht
+-   Gut für normalisierte Werte oder Z-Scores
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+diverging_data <- data.frame(
+  category = factor(LETTERS[1:8], levels = LETTERS[8:1]),
+  value = c(5, -2, 8, -3, 6, -1, 4, -7)
+)
+ggplot(diverging_data, aes(x = category, y = value, fill = value > 0)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("firebrick", "steelblue"), guide = "none") +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Abweichung vom Mittelwert")
+```
+:::
+:::::
+
+## Diverging Lollipop Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Elegantere Alternative zu Diverging Bars
+-   Nutzt Punkte statt Balken (weniger Tinte)
+-   Zeigt Richtung und Magnitude effektiv
+-   Ideal wenn genaue Werte sekundär sind
+-   Besonders gut für Präsentationen
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+lollipop_data <- data.frame(
+  category = factor(LETTERS[1:8], levels = LETTERS[8:1]),
+  value = c(5, -2, 8, -3, 6, -1, 4, -7)
+)
+ggplot(lollipop_data, aes(x = category, y = value, color = value > 0)) +
+  geom_segment(aes(y = 0, x = category, yend = value, xend = category), color = "grey") +
+  geom_point(size = 3) +
+  scale_color_manual(values = c("firebrick", "steelblue"), guide = "none") +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Abweichung vom Mittelwert")
+```
+:::
+:::::
+
+## Histogram
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Verteilung numerischer Daten in Bins
+-   Balken zeigen Häufigkeiten in Wertebereichen
+-   Erkennt Schiefe, Streuung und Ausreißer
+-   Zeigt Modi und Clustering in Daten
+-   Berührende Balken betonen Kontinuität
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(123)
+hist_data <- data.frame(
+  value = c(rnorm(400, mean = 5, sd = 1), rnorm(100, mean = 8, sd = 0.5))
+)
+ggplot(hist_data, aes(x = value)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  theme_minimal() +
+  labs(y = "Häufigkeit")
+```
+:::
+:::::
+
+## Boxplot
+
+![](images/Elements_of_a_boxplot.svg.png)
+
+## Boxplots
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Minimum, Quartile und Median
+-   Kompakte Darstellung von Verteilungen
+-   Hebt Streuung und Ausreißer hervor
+-   Ideal zum Kategorienvergleich
+-   Kann für Laien schwer verständlich sein
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(123)
+box_data <- data.frame(
+  category = rep(c("A", "B", "C", "D"), each = 100),
+  value = c(
+    rnorm(100, mean = 5, sd = 1),
+    rnorm(100, mean = 7, sd = 1.5),
+    rnorm(100, mean = 4, sd = 0.8),
+    rnorm(100, mean = 6, sd = 2)
+  )
+)
+ggplot(box_data, aes(x = category, y = value, fill = category)) +
+  geom_boxplot() +
+  scale_fill_brewer(palette = "Set2", guide = "none") +
+  theme_minimal()
+```
+:::
+:::::
+
+## Boxplot mit unseren Verspätungsdaten
+
+```{r}
+# Benötigte Pakete laden
+library(nycflights23)
+library(dplyr)
+library(ggplot2)
+
+# Daten filtern (nur positive Verspätungen) und vorbereiten
+delay_data <- flights %>%
+  left_join(airlines, by = "carrier")  # Fluggesellschaftsnamen hinzufügen
+
+# Reihenfolge der Fluggesellschaften nach Median-Verspätung festlegen
+carrier_order <- delay_data %>%
+  group_by(carrier, name) %>%
+  summarise(median_delay = median(arr_delay, na.rm = TRUE), .groups = "drop") %>%
+  arrange(median_delay)
+
+# Farben definieren (ExpressJet hervorgehoben, Rest grau)
+# (Angenommen, Sie möchten ExpressJet hervorheben, das Code "EV" hat)
+delay_data$color <- ifelse(delay_data$carrier == "G4", "#B22222", "#AAAAAA")
+
+# Boxplot erstellen
+ggplot(delay_data, aes(x = factor(name, levels = carrier_order$name), y = arr_delay)) +
+  geom_boxplot(aes(fill = color), outlier.shape = NA, varwidth = TRUE) +  # outlier.shape = NA entfernt Ausreißer für bessere Lesbarkeit
+  coord_flip() +  # Horizontale Boxplots
+  scale_fill_identity() +  # Verwende die definierten Farben direkt
+  scale_y_continuous(limits = c(-50, 150)) +  # Limitiere y-Achse für bessere Lesbarkeit
+  labs(
+    title = "Verteilung der Ankunftsverspätungen nach Fluggesellschaft",
+    x = "",
+    y = "arrival delay (min.)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  )
+```
+
+## Boxplots mit Violin Plot
+
+::::: columns
+::: {.column width="60%"}
+-   Kombiniert Boxplot mit Dichteverteilung
+-   Zeigt Form, Streuung und zentrale Tendenz
+-   Ideal für Gruppenvergleiche
+-   Verdeutlicht Schiefe und Multimodalität
+-   Informationsreichere Alternative zum Boxplot
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(123)
+violin_data <- data.frame(
+  category = rep(c("A", "B", "C"), each = 100),
+  value = c(
+    c(rnorm(50, 5, 1), rnorm(50, 8, 0.5)),
+    rnorm(100, 7, 1.5),
+    rnorm(100, 6, 0.7)
+  )
+)
+ggplot(violin_data, aes(x = category, y = value, fill = category)) +
+  geom_violin(alpha = 0.7) +
+  geom_boxplot(width = 0.2, fill = "white", alpha = 0.7) +
+  scale_fill_brewer(palette = "Set2", guide = "none") +
+  theme_minimal()
+```
+:::
+:::::
+
+## Choropleth Map
+
+::::: columns
+::: {.column width="60%"}
+-   Färbt Regionen basierend auf Datenwerten
+-   Zeigt räumliche Muster und Unterschiede
+-   Gut für Verhältnisse und Prozentsätze
+-   Nutze normalisierte Daten (pro Kopf, %)
+-   Vorsicht bei großen Flächenunterschieden
+:::
+
+::: {.column width="40%"}
+![](images/map.png)
+:::
+:::::
+
+## Stacked Area Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Kategorienbeiträge im Zeitverlauf
+-   Gestapelte Schichten zeigen Gesamtsumme
+-   Gut für Wachstum und Anteile
+-   Funktioniert am besten mit wenigen Kategorien
+-   Einzelsegmentvergleich schwierig
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(42)
+years <- 2010:2020
+area_data <- data.frame(
+  year = rep(years, 4),
+  category = rep(c("A", "B", "C", "D"), each = length(years)),
+  value = c(
+    10:20 + rnorm(11, 0, 1),
+    20:30 - rnorm(11, 0, 1),
+    15:25 + rnorm(11, 0, 2),
+    25:35 + rnorm(11, 0, 1.5)
+  )
+)
+ggplot(area_data, aes(x = year, y = value, fill = category)) +
+  geom_area() +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+```
+:::
+:::::
+
+## Stacked 100% Area Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt relative Anteile, nicht absolute Werte
+-   Verfolgt Änderungen von Kategorienanteilen
+-   Summe immer 100% für leichte Vergleichbarkeit
+-   Fokus auf Zusammensetzung, nicht Wachstum
+-   Absolute Trends gehen verloren
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(42)
+years <- 2010:2020
+area100_data <- data.frame(
+  year = rep(years, 4),
+  category = rep(c("A", "B", "C", "D"), each = length(years)),
+  value = c(
+    10:20 + rnorm(11, 0, 1),
+    20:30 - rnorm(11, 0, 1),
+    15:25 + rnorm(11, 0, 2),
+    25:35 + rnorm(11, 0, 1.5)
+  )
+)
+ggplot(area100_data, aes(x = year, y = value, fill = category)) +
+  geom_area(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal() +
+  labs(y = "Anteil")
+```
+:::
+:::::
+
+## Stacked 100% Area Chart Beispiel
+
+![](images/earth_overshoot_day.png)
+
+## Waterfall Diagram
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Beiträge zu einer Gesamtsumme
+-   Visualisiert Zu- und Abnahmen über Kategorien
+-   Hebt schrittweise Veränderungen hervor
+-   Ideal für Gewinn- oder Budgetanalysen
+-   Zeigt Faktoren für das Endergebnis
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+waterfall_data <- data.frame(
+  stage = factor(c("Start", "Einnahmen", "Kosten", "Steuern", "Ende"), 
+                levels = c("Start", "Einnahmen", "Kosten", "Steuern", "Ende")),
+  value = c(0, 50, -30, -10, 0),
+  end = c(100, 150, 120, 110, 110),
+  start = c(100, 100, 150, 120, 110),
+  type = c("total", "in", "out", "out", "total")
+)
+ggplot(waterfall_data, aes(x = stage, y = value, fill = type)) +
+  geom_rect(aes(x = stage, xmin = as.numeric(stage) - 0.4, 
+                xmax = as.numeric(stage) + 0.4, 
+                ymin = pmin(start, end), ymax = pmax(start, end)), color = "black") +
+  scale_fill_manual(values = c("in" = "steelblue", "out" = "firebrick", "total" = "darkgrey"), 
+                    guide = "none") +
+  theme_minimal() +
+  labs(y = "Wert")
+```
+:::
+:::::
+
+## Heatmap
+
+::::: columns
+::: {.column width="60%"}
+-   Nutzt Farbintensität für Matrixwerte
+-   Zeigt Muster, Cluster und Anomalien
+-   Gut für Korrelationen und Zeitreihen
+-   Einfach zu überblicken, weniger präzise
+-   Farbskala entscheidend für Interpretation
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+set.seed(42)
+n <- 10
+heatmap_data <- expand.grid(x = 1:n, y = 1:n)
+heatmap_data$value <- matrix(rnorm(n^2), n, n)[cbind(heatmap_data$x, heatmap_data$y)]
+ggplot(heatmap_data, aes(x = x, y = y, fill = value)) +
+  geom_tile() +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  coord_equal() +
+  labs(x = "", y = "")
+```
+:::
+:::::
+
+## Square Area Chart
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Anteile mit gleichgroßen Quadraten
+-   Typisch: 1 Quadrat = 1% (10×10-Raster)
+-   Ideal für einfache Proportionsdarstellung
+-   Leicht lesbar und ansprechend
+-   Am besten mit wenigen Kategorien
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+square_data <- data.frame(
+  x = rep(1:10, 10),
+  y = rep(1:10, each = 10),
+  category = c(rep("A", 40), rep("B", 25), rep("C", 20), rep("D", 15))
+)
+ggplot(square_data, aes(x = x, y = y, fill = category)) +
+  geom_tile(color = "white") +
+  scale_fill_brewer(palette = "Set2") +
+  coord_equal() +
+  theme_void() +
+  labs(fill = "Kategorie")
+```
+:::
+:::::
+
+## Treemap
+
+::::: columns
+::: {.column width="60%"}
+-   Zeigt Teil-Ganzes-Beziehungen mit Rechtecken
+-   Größe entspricht dem Wert (Umsatz, Anzahl)
+-   Visualisiert Hierarchien und Gruppierungen
+-   Gut für Proportionsvergleiche
+-   Vorsicht bei zu vielen kleinen Elementen
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+library(ggplot2)
+library(treemapify)
+treemap_data <- data.frame(
+  category = c("A", "B", "C", "D", "E", "F"),
+  subcategory = c("A1", "B1", "C1", "D1", "E1", "F1"),
+  value = c(25, 18, 12, 10, 8, 5)
+)
+ggplot(treemap_data, aes(area = value, fill = category, label = subcategory)) +
+  geom_treemap() +
+  geom_treemap_text(color = "white", fontface = "bold") +
+  scale_fill_brewer(palette = "Set2") +
+  theme_void()
+```
+:::
+:::::
+
+## Treemap
+
+![](images/treemap.png)
+
+## Nein, Sie verwenden bitte keine Pie Charts!
+
+![](images/pie-chart.png)
 
 ------------------------------------------------------------------------
 
