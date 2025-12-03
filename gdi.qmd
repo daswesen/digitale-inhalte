@@ -712,23 +712,87 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 # Sitzung 7: A/B Testing
 
-## Was ist Inferenzstatistik?
+------------------------------------------------------------------------
 
--   Von der Stichprobe auf die Grundgesamtheit schließen
--   Berücksichtigt Zufallsfehler und Unsicherheit
--   Zentral: **Wahrscheinlichkeit**, **Stichprobenverteilung**, **Testen von Hypothesen**
+## Haben Sie sich jemals gefragt…
 
-## Würfeln und der Zufall: Zentraler Grenzwertsatz
+![](images/konversionskraft1.png)
 
--   Jeder Studierende würfelt 10x → 1 Mittelwert
--   Wiederholung über viele → Verteilung der Mittelwerte
--   Was ist der Erwartungswert?
+------------------------------------------------------------------------
 
-## Würfeln und der Zufall: Zentraler Grenzwertsatz
+## …wieso eine Conversion den Unterschied macht?
 
--   Jeder Studierende würfelt 10x → 1 Mittelwert
--   Wiederholung über viele → Verteilung der Mittelwerte
--   Erwartungswert (fairer Würfel): 3.5
+![](images/konversionskraft2.png)
+
+------------------------------------------------------------------------
+
+## Das hängt alles mit dem p-Wert zusammen
+
+-   Selbst Wissenschaftler können den p-Wert nicht immer erklären.
+-   Viele wissenschaftliche Studien hängen von diesem p-Wert ab.
+-   Und leider auch viele Data-Science-Modelle.
+-   Darum wollen wir den p-Wert genau verstehen!
+
+------------------------------------------------------------------------
+
+## Die Statistik-Pille
+
+![](images/matrix.png)
+
+------------------------------------------------------------------------
+
+## Die klassische statistische Inferenz
+
+-   Natürlich nehmen alle die rote Pille (wer den Unterschied nicht kennt, bitte heute Abend Matrix ansehen).
+-   Einige haben ein Placebo bekommen → Kontrollgruppe.
+-   Die anderen haben die Statistik-Pille bekommen → Testgruppe / Treatment.
+-   Blindtest vs. Doppelblindtest
+-   Randomisierung
+
+------------------------------------------------------------------------
+
+## Die klassische statistische Inferenz
+
+-   **H0**: Nullhypothese, z.B. „Die Statistik-Pille hat keine Wirkung“.
+-   **H1**: Alternativhypothese, z.B. „Die Statistik-Pille führt zu besseren Noten“.
+-   Der Untersuchungsgegenstand muss isolierbar sein.
+-   Wir arbeiten mit Stichproben, nicht der Grundgesamtheit.
+-   Ziel: Vergleich der Mittelwerte zwischen Placebo und Treatment.
+
+------------------------------------------------------------------------
+
+## Normalverteilung mit Standardabweichungen
+
+![](images/normalverteilung.png)
+
+------------------------------------------------------------------------
+
+## Was genau ist eine Standardabweichung?
+
+-   Durchschnittliche Abweichung der Werte vom Mittelwert.
+-   Werte eng beieinander → geringe Schwankung.
+-   Werte weit gestreut → hohe Schwankung.
+-   Zeigt Streuung, nicht nur den Durchschnitt.
+-   Zwei Gruppen mit gleichem Mittelwert können völlig unterschiedliche Streuungen haben.
+
+------------------------------------------------------------------------
+
+## Wie weit sind die Daten um den Mittelwert verteilt: Streuung
+
+![](images/streuung.png)
+
+------------------------------------------------------------------------
+
+## Hadlum vs Hadlum (1949)
+
+![](images/hadlum.png)
+
+------------------------------------------------------------------------
+
+## Was, wenn wir heute Mittag alle Stichproben nähmen?
+
+![](images/mittelwerte.png)
+
 
 ## Würfeln und der Zufall: Zentraler Grenzwertsatz
 
@@ -750,195 +814,70 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
       add=TRUE, col="red", lwd=2)
 ```
 
-## Warum ist das wichtig?
+------------------------------------------------------------------------
 
--   Diese Verteilung erlaubt uns Aussagen über:
-    -   Vertrauensbereiche (Konfidenzintervalle)
-    -   Signifikanztests (z. B. t-Test)
--   **Beispiel**: Ist ein Würfel gezinkt?
--   Stichprobe: z. B. Mittelwert = 3.8
--   **Ist dieser Unterschied Zufall oder nicht?**
+## Stichprobenverteilung des Mittelwerts
 
-## Hypothesentesten: Grundlagen
+![](images/stichprobenverteilung.png)
 
--   **Nullhypothese (H₀)**: Annahme keines Effekts/Unterschieds
--   **Alternativhypothese (H₁)**: Annahme eines Effekts/Unterschieds
--   **Arten von Hypothesen**:
-    -   Ungerichtete Hypothesen (zweiseitig): µ₁ ≠ µ₂
-    -   Gerichtete Hypothesen (einseitig): µ₁ \> µ₂ oder µ₁ \< µ₂
 
-## Die Logik des Hypothesentestens
+------------------------------------------------------------------------
 
--   **Indirekter Beweis**: Wir falsifizieren H₀ statt H₁ zu beweisen
--   **Analogie zum Gerichtsprozess**: "Unschuldig bis zum Beweis der Schuld"
--   **Entscheidungsbaum**: Wann wird H₀ beibehalten oder verworfen?
+## Normalverteilung mit Standardabweichungen
 
-## Signifikanzniveau und p-Wert
+![](images/normalverteilung.png)
 
--   **Signifikanzniveau α**: Vorab festgelegte Irrtumswahrscheinlichkeit (typisch: 0.05)
--   **p-Wert**: Wahrscheinlichkeit, die beobachteten (oder extremeren) Daten unter H₀ zu erhalten
--   **Entscheidungsregel**: Verwerfe H₀, wenn p \< α
--   **Kritische Werte**: Alternative Darstellung der Entscheidungsregel
+------------------------------------------------------------------------
 
-## Von der Stichprobenverteilung zum t-Test
+## Ab wann ist etwas statistisch signifikant?
 
--   Die **Stichprobenverteilung der Mittelwerte** zeigt: Wie stark Mittelwerte **zufällig schwanken**, selbst wenn H₀ stimmt
--   Diese Schwankung hat eine Streuung: den **Standardfehler (SE)**
+-   Abhängig vom Signifikanzniveau α (typisch 5%).
+-   α kann variieren – je nach Schwere eines Fehlers.
+-   Ein Ergebnis ist signifikant, wenn H0 gemäß α abgelehnt wird.
+-   **p-Wert**: Wahrscheinlichkeit, dieses Stichprobenergebnis zu erhalten, wenn H0 wahr ist.
 
-$$ SE = \frac{s}{\sqrt{n}} $$
+------------------------------------------------------------------------
 
--   Der t-Test prüft, ob der beobachtete Mittelwert **außerhalb** dieser erwarteten Schwankung liegt
+## Der t-Test: Einer von vielen Tests
 
-## Der Standardfehler
+------------------------------------------------------------------------
 
--   **Definition**: Standardabweichung der Stichprobenmittelwerte
--   **Praktische Bedeutung**: Je größer die Stichprobe, desto präziser die Schätzung
+## Der p-Wert am Beispiel Moderna (nicht mit Mittelwerten)
 
-```{r echo=TRUE}
-set.seed(422)
-würfe <- sample(1:6, 60, replace = TRUE)
-se <- sd(würfe) / sqrt(length(würfe))
-se
-```
+-   Studie mit 30.420 Teilnehmenden, 1:1 randomisiert.
+-   185 Covid-Fälle in der Placebo-Gruppe vs. 11 in der Impf-Gruppe.
+-   Impfstoffwirksamkeit: **94,1%** (95%-CI: 89,3–96,8%; p \< 0,001).
+-   Schwere Verläufe: 30 – alle in der Placebo-Gruppe.
 
-```{r}
-mean(würfe)
-```
+------------------------------------------------------------------------
 
-## t-Test in R (Einzelstichprobe)
+## Fehler 1. und 2. Art (α und β-Fehler)
 
-::: small
-```{r}
-mean(würfe)
-t.test(würfe, mu = 3.5)
-```
-:::
+![](images/fehler.png)
 
-## Interpretation des t-Tests
+------------------------------------------------------------------------
 
--   **p \< 0.05** → Ablehnung der Nullhypothese (Würfel evtl. gezinkt)
--   **p ≥ 0.05** → Kein ausreichender Hinweis auf Manipulation
+## p-Wert: Check! Aber woher weiß ich, was ich testen soll?
 
-## Was ist denn nun „signifikant“?
+-   Abhängig von Effektstärke, Stichprobengröße u.a.
+-   **Framework:**
+    1.  Auf Basis *\[qualitativer und quantitativer Daten\]*
+    2.  wird erwartet, dass *\[Änderung\]* für *\[Population\]* einen *\[Einfluss\]* hat,
+    3.  der *\[KPI verändert\]* innerhalb von *\[Geschäftszyklus\]*.
+-   Priorisierung nach Business-Impact.
 
--   Ein signifikantes Ergebnis heißt nicht, dass es „wichtig“ ist
--   Es heißt nur: Unterschied ist **nicht gut durch Zufall erklärbar**
--   Immer im Kontext interpretieren (Effektgröße, Relevanz)
+------------------------------------------------------------------------
 
-## Konfidenzintervalle
+## Beispiel
 
--   **Definition**: Bereich, der mit einer bestimmten Wahrscheinlichkeit den wahren Parameter enthält
+1.  Auf Basis der Absprungrate von 80% von neuen Nutzern wird erwartet,\
+2.  dass eine Änderung der Labels in der Navigation vor allem neue Nutzer besser abholt,\
+3.  sodass die Absprungrate von neuen Nutzern innerhalb eines Monats auf unter 40% gedrückt werden kann.
 
--   **Interpretation**: Was bedeutet ein 95%-Konfidenzintervall?
 
--   **Zusammenhang mit Hypothesentests**: Enthält ein 95%-KI den Wert der Nullhypothese?
 
-## Experimentelles Design
 
--   **Wichtige Konzepte**: Randomisierung, Kontrolle, Randomized Control Trial (RCT)
--   **Experimentierfehler vermeiden**:
-    -   Placebo-Effekt
-    -   Hawthorne-Effekt
-    -   Observer Bias
-    -   Selection Bias
 
-## Ursprung der t-Verteilung: William S. Gosset
-
--   **William S. Gosset** war Chemiker und Statistiker bei der Guinness-Brauerei (Anfang 1900er).
--   Aufgabe: Qualitätskontrolle (z. B. Stärkegehalt von Gerste messen).
--   Problem: Nur **kleine Stichproben** pro Tag (z. B. n = 4 oder 5).
--   Damalige Statistik: Basierte auf **großen Stichproben** und der **Normalverteilung**.
-
-## Das statistische Problem
-
--   Ziel: Testen, ob der Mittelwert von Proben vom Sollwert abweicht.
--   Normalformel: \[ \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \] → funktioniert nur, wenn **σ** (Standardabweichung der Grundgesamtheit) bekannt ist.
--   Bei kleinen n musste Gosset stattdessen **s** (Stichprobenstandardabweichung) verwenden: $$  \frac{\bar{x} - \mu}{s / \sqrt{n}}$$
--   Folge: Diese Teststatistik **folgt nicht mehr der Normalverteilung**.
-
-## Die Lösung
-
--   Gosset zeigte: Die neue Verteilung hängt von der Anzahl an Beobachtungen ab → **Freiheitsgrade (n−1)**.
--   Daraus entstand eine neue Verteilung: die **t-Verteilung mit df**.
--   Diese berücksichtigt die **größere Unsicherheit bei kleinen n** durch dickere „Schwänze“ (heavy tails).
-
-## Warum „Student“?
-
--   Guinness verbot es Mitarbeitern, unter eigenem Namen zu publizieren.
--   Gosset veröffentlichte 1908 unter dem Pseudonym **„Student“**:
-    -   *„The Probable Error of a Mean“* (in *Biometrika*)
--   Der t-Test wurde dadurch bekannt als **„Student’s t-Test“**.
-
-## Visualisierung unterschiedlicher t-Verteilungen
-
-```{r}
-    # Vergleich von t-Verteilungen mit unterschiedlichen Freiheitsgraden
-    x <- seq(-4, 4, length.out = 1000)
-    y_normal <- dnorm(x)
-    y_t1 <- dt(x, df = 1)  # 1 Freiheitsgrad
-    y_t5 <- dt(x, df = 5)  # 5 Freiheitsgrade
-    y_t30 <- dt(x, df = 30)  # 30 Freiheitsgrade
-
-    plot(x, y_normal, type="l", lwd=2, col="black", 
-         main="t-Verteilungen im Vergleich zur Normalverteilung",
-         xlab="x", ylab="Wahrscheinlichkeitsdichte")
-    lines(x, y_t1, lwd=2, col="red")
-    lines(x, y_t5, lwd=2, col="blue")
-    lines(x, y_t30, lwd=2, col="green")
-    legend("topright", 
-           legend=c("Normalverteilung", "t (df=1)", "t (df=5)", "t (df=30)"),
-           col=c("black", "red", "blue", "green"), lwd=2)
-```
-
-## Freiheitsgrade (Degrees of Freedom, df)
-
--   Anzahl der **unabhängigen Informationen**, die zur Schätzung einer Größe verfügbar sind.
--   Bei der Berechnung der **Stichprobenvarianz** geht 1 Freiheitsgrad verloren: \[ df = n - 1 \] (weil der Mittelwert bereits aus den Daten berechnet wurde)
--   Freiheitsgrade bestimmen die **Form der t-Verteilung**:
-    -   Wenige df → **dickere Randbereiche**
-    -   Viele df → t-Verteilung nähert sich der **Normalverteilung**
-
-## Freiheitsgrade (Degrees of Freedom, df)
-
--   Freiheitsgrade sind wichtig für:
-    -   Auswahl des richtigen **kritischen t-Werts**
-    -   **Vertrauensintervalle** und **p-Werte**
-
-## Arten von t-Tests
-
--   **Einstichproben-t-Test**: Vergleich mit bekanntem oder hypothetischem Wert
-    -   Anwendungsbeispiel: Entspricht der mittlere Blutzuckerwert einer Patientengruppe dem Normalwert?
-    -   Formel: $t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$
-
-## Arten von t-Tests
-
--   **Zweistichproben-t-Test (unabhängig)**: Vergleich zweier unabhängiger Gruppen
-    -   Anwendungsbeispiel: Unterscheiden sich die Testergebnisse zweier unterschiedlicher Lernmethoden?
-    -   Formel bei gleichen Varianzen: $t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
-
-## Arten von t-Tests
-
--   **Gepaarter t-Test (abhängig)**: Vergleich verbundener Messungen
-    -   Anwendungsbeispiel: Vor-Nach-Vergleich einer Intervention
-    -   Formel: $t = \frac{\bar{d}}{s_d / \sqrt{n}}$
-
-## Arten von t-Tests
-
--   **Welch-Test**: Variante für ungleiche Varianzen
-    -   Anwendungsbeispiel: Wenn die Streuung in beiden Gruppen deutlich unterschiedlich ist
-    -   Angepasste Freiheitsgrade
-
-## Fehler beim Hypothesentesten
-
--   **Fehler 1. Art (α-Fehler)**: Falsch-positive Entscheidung (H₀ fälschlicherweise verwerfen)
-
--   **Fehler 2. Art (β-Fehler)**: Falsch-negative Entscheidung (H₀ fälschlicherweise beibehalten)
-
--   **Power (1-β)**: Wahrscheinlichkeit, einen tatsächlich vorhandenen Effekt zu entdecken
-
--   
-
-    ## **Balanceakt**: Abwägung zwischen α und β
 
 # Sitzung 8: Data Mining
 
@@ -1428,7 +1367,7 @@ ggplot(column_data, aes(x = kategorie, y = wert, fill = kategorie)) +
 ## Vergleich: Horizontal vs. Vertical Bar Charts
 
 | Feature | Horizontal | Vertical |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Best for | Long category labels, many items | Time-based or logical progression |
 | Readability | Easier when labels are long | Requires rotation for long labels |
 | Use case | Rankings, survey responses | Trends over time, grouped comparisons |
