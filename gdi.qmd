@@ -876,18 +876,129 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
 
 
 
-
-
-
 # Sitzung 8: Data Mining
+
+---
 
 ## Was ist Data Mining?
 
+- Systematische Identifikation von Mustern in Daten  
+- Ziel: aus großen Datenmengen verwertbare Erkenntnisse ableiten  
+- Typische Muster: Segmente, Regeln, Wahrscheinlichkeiten, Anomalien  
+
+---
+
 ## Warum Data Mining?
+
+- Nutzerverhalten besser verstehen  
+- Inhalte zielgerichteter entwickeln  
+- Personalisierung und Empfehlung ermöglichen  
+- Hypothesen datengetrieben prüfen  
+
+---
+
+## Kernaufgaben im Data Mining
+
+- Klassifikation  
+- Regression  
+- Clustering  
+- Assoziationsanalyse  
+- Anomalieerkennung  
+- Textbasierte Mustererkennung  
+
+---
 
 ## Assoziationsanalyse
 
+- Identifikation häufig gemeinsam auftretender Muster  
+- Beispiel: „Wer A liest, liest oft auch B“  
+- Metriken: Support, Confidence, Lift  
+- Anwendung: Content-Empfehlungen, Modul-Kombinationen auf Seiten  
+
+---
+
 ## Naive Bayes
+
+- Probabilistischer Klassifikator  
+- Nutzt bedingte Wahrscheinlichkeiten  
+- Annahme: Merkmale sind unabhängig  
+- Anwendung: einfache Textklassifikation, Nutzer-Kategorisierung  
+
+---
+
+## Clustering
+
+- Gruppierung ähnlicher Beobachtungen (ohne Labels)  
+- Methoden: K-Means, hierarchisches Clustering  
+- Anwendung: Themencluster, Nutzersegmente, Content-Typen  
+
+---
+
+## Decision Trees
+
+- Baumstruktur zur Vorhersage und Regelableitung  
+- Gut interpretierbar  
+- Zeigt, welche Merkmale Inhalte oder Nutzer unterscheiden  
+- Anwendung: Erfolgsfaktoren für Content identifizieren  
+
+---
+
+## Mini-EDA für Content-Daten
+
+- Erste Strukturierung: Variablen-Check, Ausreißer, Korrelationen  
+- Typische Variablen: Thema, Format, Scrolltiefe, Viewtime, CTR  
+- Drei Fragen:
+  - Welche Inhalte clustern natürlich?  
+  - Welche Variablen hängen zusammen?  
+  - Welche Themen sind Ausreißer?  
+
+---
+
+## Text Mining (Light)
+
+- Keyword-Häufigkeiten (Unigramme, Bigramme)  
+- Themenpattern in Überschriften/Teasern  
+- Sentiment in Kommentaren oder Feedback  
+- Unterstützt qualitative Inhaltsanalyse  
+
+---
+
+## LLMs als Explorationswerkzeug
+
+- Extrahieren semantischer Muster in Textdaten  
+- Gut für: Themenvorschläge, Zusammenfassungen, Hypothesen  
+- Keine statistische Evidenz, keine Kausalität  
+- Ergänzen, nicht ersetzen klassische Data-Mining-Methoden  
+
+---
+
+## Embedding-Analysen
+
+- LLM-Embeddings als Vektoren → Ähnlichkeitsmessung  
+- Anwendung:
+  - Content-Clustering  
+  - Recommendations  
+  - Themenräume identifizieren  
+- Robust gegenüber Synonymen und Wortvarianten  
+
+---
+
+## Beispiel: Newsletter-Content analysieren
+
+- 10–20 Titel in Embeddings wandeln  
+- Cluster bilden (z. B. 2–3 Gruppen)  
+- Interpretation: Welche Themen ziehen ähnlich?  
+- Verbindung zu KPI-Folien aus Sitzung 6 herstellen  
+
+---
+
+## Typische Fehler im Data Mining
+
+- Zu kleine Stichproben → instabile Muster  
+- Korrelationen als Kausalität interpretieren  
+- Modelle ohne Validierung einsetzen  
+- Fehlende Segmenttests (z. B. neue vs. wiederkehrende Nutzer)  
+
 
 ------------------------------------------------------------------------
 
