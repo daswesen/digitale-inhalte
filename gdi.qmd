@@ -730,7 +730,7 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 -   Selbst Wissenschaftler können den p-Wert nicht immer erklären.
 -   Viele wissenschaftliche Studien hängen von diesem p-Wert ab.
--   Und leider auch viele Data-Science-Modelle.
+- A/B-Tests hängen ebenso vom p-Wert ab
 -   Darum wollen wir den p-Wert genau verstehen!
 
 ------------------------------------------------------------------------
@@ -838,7 +838,9 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
 
 ------------------------------------------------------------------------
 
-## Der t-Test: Einer von vielen Tests
+## Würden News ohne die Nachrichtenanzahl gelesen werden?
+
+![](images/frank_interone.png)
 
 ------------------------------------------------------------------------
 
@@ -854,6 +856,10 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
 ## Fehler 1. und 2. Art (α und β-Fehler)
 
 ![](images/fehler.png)
+
+## Bekannt von Corona-Tests
+
+![](images/corona.pdf)
 
 ------------------------------------------------------------------------
 
