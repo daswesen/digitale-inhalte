@@ -730,7 +730,7 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 -   Selbst Wissenschaftler können den p-Wert nicht immer erklären.
 -   Viele wissenschaftliche Studien hängen von diesem p-Wert ab.
-- A/B-Tests hängen ebenso vom p-Wert ab
+-   A/B-Tests hängen ebenso vom p-Wert ab
 -   Darum wollen wir den p-Wert genau verstehen!
 
 ------------------------------------------------------------------------
@@ -793,7 +793,6 @@ Ziele definieren die Richtung – KPIs messen den Fortschritt.
 
 ![](images/mittelwerte.png)
 
-
 ## Würfeln und der Zufall: Zentraler Grenzwertsatz
 
 ```{r}
@@ -819,7 +818,6 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
 ## Stichprobenverteilung des Mittelwerts
 
 ![](images/stichprobenverteilung.png)
-
 
 ------------------------------------------------------------------------
 
@@ -880,131 +878,174 @@ curve(dnorm(x, mean=mean(sample_means), sd=sd(sample_means)),
 2.  dass eine Änderung der Labels in der Navigation vor allem neue Nutzer besser abholt,\
 3.  sodass die Absprungrate von neuen Nutzern innerhalb eines Monats auf unter 40% gedrückt werden kann.
 
-
-
 # Sitzung 8: Data Mining
 
----
+------------------------------------------------------------------------
+
+## KI: Mehr als LLMs
+
+![](images/ai.png)
 
 ## Was ist Data Mining?
 
-- Systematische Identifikation von Mustern in Daten  
-- Ziel: aus großen Datenmengen verwertbare Erkenntnisse ableiten  
-- Typische Muster: Segmente, Regeln, Wahrscheinlichkeiten, Anomalien  
+-   Verfahren aus dem KI-Kosmos
+-   Systematische Identifikation von Mustern in Daten
+-   Ziel: aus großen Datenmengen verwertbare Erkenntnisse ableiten
+-   Typische Muster: Segmente, Regeln, Wahrscheinlichkeiten, Anomalien
 
----
+------------------------------------------------------------------------
 
 ## Warum Data Mining?
 
-- Nutzerverhalten besser verstehen  
-- Inhalte zielgerichteter entwickeln  
-- Personalisierung und Empfehlung ermöglichen  
-- Hypothesen datengetrieben prüfen  
+-   Nutzerverhalten besser verstehen
+-   Inhalte zielgerichteter entwickeln
+-   Personalisierung und Empfehlung ermöglichen
+-   Hypothesen datengetrieben prüfen
 
----
+------------------------------------------------------------------------
+
+## Denksportaufgabe
+
+-   Warum sind die Empfehlungen von Spotify gut und die von Netflix nicht?
+-   Warum funktionieren Nachrichten-Empfehlungen nicht?
 
 ## Kernaufgaben im Data Mining
 
-- Klassifikation  
-- Regression  
-- Clustering  
-- Assoziationsanalyse  
-- Anomalieerkennung  
-- Textbasierte Mustererkennung  
+-   Klassifikation
+-   Regression
+-   Clustering
+-   Assoziationsanalyse
+-   Anomalieerkennung
 
----
+------------------------------------------------------------------------
 
 ## Assoziationsanalyse
 
-- Identifikation häufig gemeinsam auftretender Muster  
-- Beispiel: „Wer A liest, liest oft auch B“  
-- Metriken: Support, Confidence, Lift  
-- Anwendung: Content-Empfehlungen, Modul-Kombinationen auf Seiten  
+-   Identifikation häufig gemeinsam auftretender Muster
+-   Beispiel: „Wer A liest, liest oft auch B“
+-   Anwendung: Content-Empfehlungen, Modul-Kombinationen auf Seiten, datengetriebene Personas
 
----
+------------------------------------------------------------------------
 
-## Naive Bayes
+## Beispiel
 
-- Probabilistischer Klassifikator  
-- Nutzt bedingte Wahrscheinlichkeiten  
-- Annahme: Merkmale sind unabhängig  
-- Anwendung: einfache Textklassifikation, Nutzer-Kategorisierung  
+![](images/data-driven-personas.png)
 
----
+------------------------------------------------------------------------
+
+## Klassifikation
+
+-   Zuordnung von Daten zu festen Kategorien
+-   Lernen aus bekannten Beispielen (Supervised)
+-   Beispiel: „Spam“ oder „Relevant“?
+-   Anwendung: Sentiment-Analyse, Churn-Prediction, Auto-Tagging
+
+------------------------------------------------------------------------
+
+## Decision Trees (old school)
+
+-   Baumstruktur zur Vorhersage und Regelableitung
+-   Gut interpretierbar
+-   Zeigt, welche Merkmale Inhalte oder Nutzer unterscheiden
+-   Anwendung: Erfolgsfaktoren für Content identifizieren
+
+------------------------------------------------------------------------
+
+## Decision Tree
+
+![](images/decision-tree.png)
+
+## Regression
+
+-   Vorhersage von Zahlenwerten (statt Kategorien)
+-   Untersucht Zusammenhang von Ursache und Wirkung
+-   Beispiel: Videolänge $\rightarrow$ Verweildauer
+-   Anwendung: Budget-Planung, ROI-Prognose, Trends
+
+------------------------------------------------------------------------
+
+## Regression Beispiel
+
+```{r message=FALSE}
+# Bibliotheken laden
+library(ggplot2)
+
+# 1. Daten simulieren (Dummy-Daten für den Kurs)
+set.seed(42) # Für reproduzierbare Ergebnisse
+n <- 50      # Anzahl der Artikel
+
+# Zufällige Wortanzahl zwischen 300 und 2500 Wörtern
+wortanzahl <- round(runif(n, min = 300, max = 2500))
+
+# Lesezeit simulieren: Basiswert + Faktor * Wörter + Zufallsrauschen (Fehler)
+# Annahme: Längere Texte = längere Lesezeit, aber nicht immer perfekt linear
+lesezeit <- 20 + (wortanzahl * 0.12) + rnorm(n, mean = 0, sd = 40)
+
+# In Dataframe packen
+df <- data.frame(Wortanzahl = wortanzahl, Lesezeit = lesezeit)
+
+# 2. Plot erstellen
+ggplot(df, aes(x = Wortanzahl, y = Lesezeit)) +
+  
+  # Die Punkte (Streudiagramm)
+  geom_point(alpha = 0.6, size = 3, color = "#2C3E50") + 
+  
+  # Die Regressionsgerade (Linear Model = lm)
+  # 'se = TRUE' zeigt den grauen Konfidenzbereich (Schatten) an
+  geom_smooth(method = "lm", color = "#E74c3C", size = 1.5, se = TRUE) +
+  
+  # Beschriftung (Deutsch)
+  labs(
+    title = "Regression: Einfluss der Textlänge",
+    subtitle = "Zusammenhang zwischen Wortanzahl und Verweildauer (Sek.)",
+    x = "Anzahl der Wörter",
+    y = "Lesezeit (Sekunden)"
+  ) +
+  
+  # Design (Minimalistisch für Folien)
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank() # Weniger Gitterlinien für Ruhe
+  )
+
+# 3. Bild speichern (optional)
+# ggsave("regression-chart.png", width = 8, height = 5, dpi = 300)
+```
+
 
 ## Clustering
 
-- Gruppierung ähnlicher Beobachtungen (ohne Labels)  
-- Methoden: K-Means, hierarchisches Clustering  
-- Anwendung: Themencluster, Nutzersegmente, Content-Typen  
+-   Gruppierung ähnlicher Beobachtungen (ohne Labels)
+-   Methoden: K-Means, hierarchisches Clustering
+-   Anwendung: Themencluster, Nutzersegmente, Content-Typen
 
----
-
-## Decision Trees
-
-- Baumstruktur zur Vorhersage und Regelableitung  
-- Gut interpretierbar  
-- Zeigt, welche Merkmale Inhalte oder Nutzer unterscheiden  
-- Anwendung: Erfolgsfaktoren für Content identifizieren  
-
----
-
-## Mini-EDA für Content-Daten
-
-- Erste Strukturierung: Variablen-Check, Ausreißer, Korrelationen  
-- Typische Variablen: Thema, Format, Scrolltiefe, Viewtime, CTR  
-- Drei Fragen:
-  - Welche Inhalte clustern natürlich?  
-  - Welche Variablen hängen zusammen?  
-  - Welche Themen sind Ausreißer?  
-
----
-
-## Text Mining (Light)
-
-- Keyword-Häufigkeiten (Unigramme, Bigramme)  
-- Themenpattern in Überschriften/Teasern  
-- Sentiment in Kommentaren oder Feedback  
-- Unterstützt qualitative Inhaltsanalyse  
-
----
+------------------------------------------------------------------------
 
 ## LLMs als Explorationswerkzeug
 
-- Extrahieren semantischer Muster in Textdaten  
-- Gut für: Themenvorschläge, Zusammenfassungen, Hypothesen  
-- Keine statistische Evidenz, keine Kausalität  
-- Ergänzen, nicht ersetzen klassische Data-Mining-Methoden  
+-   Extrahieren semantischer Muster in Textdaten
+-   Gut für: Themenvorschläge, Zusammenfassungen, Hypothesen
+-   Keine statistische Evidenz, keine Kausalität
+-   Ergänzen, nicht ersetzen klassische Data-Mining-Methoden
 
----
+------------------------------------------------------------------------
 
-## Embedding-Analysen
+## End-to-End-Prozess: VoC
 
-- LLM-Embeddings als Vektoren → Ähnlichkeitsmessung  
-- Anwendung:
-  - Content-Clustering  
-  - Recommendations  
-  - Themenräume identifizieren  
-- Robust gegenüber Synonymen und Wortvarianten  
+![](images/flowchart.png)
 
----
+------------------------------------------------------------------------
 
-## Beispiel: Newsletter-Content analysieren
+## Demo
 
-- 10–20 Titel in Embeddings wandeln  
-- Cluster bilden (z. B. 2–3 Gruppen)  
-- Interpretation: Welche Themen ziehen ähnlich?  
-- Verbindung zu KPI-Folien aus Sitzung 6 herstellen  
+------------------------------------------------------------------------
 
----
+## Ihre Aufgabe
 
-## Typische Fehler im Data Mining
-
-- Zu kleine Stichproben → instabile Muster  
-- Korrelationen als Kausalität interpretieren  
-- Modelle ohne Validierung einsetzen  
-- Fehlende Segmenttests (z. B. neue vs. wiederkehrende Nutzer)  
-
+-   Wie können Sie Daten verwenden in Ihrem Projekt?
+-   Wie können Daten helfen, Ihr Projekt zu verbessern?
+-   Welche der vorgestellten Methoden könnten Ihnen dabei helfen?
 
 ------------------------------------------------------------------------
 

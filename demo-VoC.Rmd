@@ -1,0 +1,67 @@
+---
+title: "VoC-Analyse"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r Libraries}
+library(tidyverse)
+library(jsonlite)
+```
+
+```{r Daten_einlesen}
+kunden_feedback <- read_csv("data/kunden_feedback.csv")
+kunden_feedback %>%
+  summarize(mean = round(mean(Rating),2))
+kunden_feedback_json <- jsonlite::toJSON(kunden_feedback, pretty = TRUE, auto_unbox = TRUE)
+```
+
+```{r}
+kunden_feedback
+```
+
+
+Cooler wäre es, wenn man hier eine logistische Regression durchführte anstatt das Modell die Driver bewerten zu lassen...
+
+```{r Prompt_Funktion}
+interpret_voc_ollama <- function(voc_json, model) {
+
+  prompt <- paste0(
+    "You work in Customer Service.\n",
+    "The following data is a list of customer feedback entries as JSON objects.\n",
+    "Each item contains: 'Datum', 'Kommentar', and 'Rating'.\n\n",
+    "Your tasks:\n",
+    "1. Classify each entry into one of: Service Quality, Response Time, Accessibility & Channels, or Process & Platform Issues.\n",
+    "2. Identify which categories drive negative ratings.\n",
+    "3. Identify weekly trends.\n",
+    "4. Give one short action recommendation.\n\n",
+    "Be as concise as possible, only answer the questions. Customer Feedback JSON:\n",
+    voc_json,
+    "\n\nYour interpretation:"
+  )
+
+  url <- "http://localhost:11434/api/generate"
+
+  body <- list(
+    model = model,
+    prompt = prompt,
+    stream = FALSE
+  )
+
+  res <- httr::POST(
+    url,
+    body = jsonlite::toJSON(body, auto_unbox = TRUE),
+    httr::add_headers("Content-Type" = "application/json")
+  )
+
+  json <- jsonlite::fromJSON(httr::content(res, as = "text"))
+  json$response
+}
+```
+
+```{r Ausfuehrung}
+result <- interpret_voc_ollama(kunden_feedback_json, model = "llama3.1")
+cat(result)
+```
+
