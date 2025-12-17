@@ -1015,7 +1015,6 @@ ggplot(df, aes(x = Wortanzahl, y = Lesezeit)) +
 # ggsave("regression-chart.png", width = 8, height = 5, dpi = 300)
 ```
 
-
 ## Clustering
 
 -   Gruppierung ähnlicher Beobachtungen (ohne Labels)
@@ -1057,9 +1056,29 @@ ggplot(df, aes(x = Wortanzahl, y = Lesezeit)) +
 
 The greatest value of a picture is when it forces us to notice what we never expected to see. (John Tukey)
 
-## Warum Datenvisualisierung, Teil 2
+## Warum Datenvisualisierung? II
+
+- Reduktion von Cognitive Load (Gehirn-Entlastung)
+- Niemand versteht eine Excel-Tabelle mit 10.000 Zeilen in 5 Sekunden. Ein Streudiagramm verstehen wir sofort.
+- In der „Aufmerksamkeitsökonomie“ haben Stakeholder und User keine Zeit. 
+- Visualisierung ist der schnellste Weg, Informationen ins Gehirn des Gegenübers zu transportieren.  
+
+
+## Warum Datenvisualisierung III
 
 ![](images/Anscombe's_quartet_3.svg.png)
+
+## Warum Datenvisualisierung IV
+
+- Überzeugungskraft (Data Storytelling)
+- Zahlen sind abstrakt, Bilder sind emotionaler und überzeugender. 
+- Wer Budget für ein digitales Produkt will, muss das Management mit Charts überzeugen, nicht mit Rohdaten.  
+
+## Warum Datenvisualisierung V
+
+- Data Literacy ist ein Karriere-Booster
+- Content-Erstellung wird zunehmend automatisiert (KI)
+- Die Fähigkeit, Ergebnisse zu interpretieren und darzustellen, wird die Kompetenz sein, die den Menschen (noch) von der KI unterscheidet.
 
 ## 5 wichtige Schritte
 
@@ -2014,30 +2033,28 @@ ggplot(treemap_data, aes(area = value, fill = category, label = subcategory)) +
 
 ------------------------------------------------------------------------
 
-##Die Lücke zwischen Daten und Entscheidung
+## Die Lücke zwischen Daten und Entscheidung
 
-> "Data scientists often suffer from the curse of knowledge. They know the data so well they forget that the audience doesn’t."
-> — *Cole Nussbaumer Knaflic*
+> "Data scientists often suffer from the curse of knowledge. They know the data so well they forget that the audience doesn’t." — *Cole Nussbaumer Knaflic*
 
 ## Exploratory vs. Explanatory Analysis
 
 Es gibt zwei Arten der Datenanalyse, die oft verwechselt werden:
 
-1. **Exploratory (Der Archäologe):**
-* Sie graben durch Datenberge.
-* Sie drehen jeden Stein um.
-* Sie erstellen 100 Charts, um 2 interessante zu finden.
-* **Ziel:** Verstehen, was passiert ist.
+1.  **Exploratory (Der Archäologe):**
 
+-   Sie graben durch Datenberge.
+-   Sie drehen jeden Stein um.
+-   Sie erstellen 100 Charts, um 2 interessante zu finden.
+-   **Ziel:** Verstehen, was passiert ist.
 
-2. **Explanatory (Der Journalist):**
-* Sie zeigen **nur** die 2 interessanten Charts (die Perlen).
-* Sie liefern Kontext und Handlungsempfehlungen.
-* **Ziel:** Jemand anderen zu einer Entscheidung bewegen.
+2.  **Explanatory (Der Journalist):**
 
+-   Sie zeigen **nur** die 2 interessanten Charts (die Perlen).
+-   Sie liefern Kontext und Handlungsempfehlungen.
+-   **Ziel:** Jemand anderen zu einer Entscheidung bewegen.
 
-
-##Der häufigste Fehler
+## Der häufigste Fehler
 
 Wir neigen dazu, dem Publikum den **gesamten Grabungsprozess** zu zeigen („Schaut mal, wie viel Arbeit ich mir gemacht habe!“).
 
@@ -2045,26 +2062,26 @@ Wir neigen dazu, dem Publikum den **gesamten Grabungsprozess** zu zeigen („Sch
 
 Das Management will wissen:
 
-1. Was ist das Problem?
-2. Warum ist es wichtig?
-3. Was sollen wir tun?
+1.  Was ist das Problem?
+2.  Warum ist es wichtig?
+3.  Was sollen wir tun?
 
 ## Data Storytelling Dramaturgie
 
 Datengeschichten folgen oft einer klassischen Dramaturgie:
 
-1. **Situation:** Der Status Quo (z.B. „Unser Traffic war stabil...“).
-2. **Komplikation:** Das Problem/Die Veränderung („...bis im Q3 ein Wettbewerber X tat“).
-3. **Lösung/Insight:** Die Erkenntnis aus den Daten („...unsere Analyse zeigt, dass wir Segment Y verlieren“).
-4. **Action:** Der Handlungsvorschlag („...deshalb müssen wir Budget auf Kanal Z schieben“).
+1.  **Situation:** Der Status Quo (z.B. „Unser Traffic war stabil...“).
+2.  **Komplikation:** Das Problem/Die Veränderung („...bis im Q3 ein Wettbewerber X tat“).
+3.  **Lösung/Insight:** Die Erkenntnis aus den Daten („...unsere Analyse zeigt, dass wir Segment Y verlieren“).
+4.  **Action:** Der Handlungsvorschlag („...deshalb müssen wir Budget auf Kanal Z schieben“).
 
 ## Kontext ist King
 
 Zahlen allein bedeuten nichts.
 
-* „Wir haben 10.000 Visits.“ \rightarrow Gut oder schlecht?
-* „Wir haben 10.000 Visits, Ziel war 5.000.“ \rightarrow **Gut!**
-* „Wir haben 10.000 Visits, letztes Jahr waren es 50.000.“ \rightarrow **Katastrophe!**
+-   „Wir haben 10.000 Visits.“ \rightarrow Gut oder schlecht?
+-   „Wir haben 10.000 Visits, Ziel war 5.000.“ \rightarrow *\*Gut!\*\*
+-   „Wir haben 10.000 Visits, letztes Jahr waren es 50.000.“ \rightarrow *\*Katastrophe!\*\*
 
 **Regel:** Zeigen Sie niemals eine Metrik ohne Vergleichswert (Vorjahr, Ziel, Wettbewerb).
 
@@ -2074,7 +2091,9 @@ Anstatt nur bunte Balken zu zeigen, nutzen wir Farbe strategisch, um die Aufmerk
 
 **Szenario:** Wir wollen zeigen, dass *Subaru* im Vergleich zu anderen Herstellern im Datensatz `mpg` besonders effizient auf dem Highway ist.
 
-##Code: Fokus durch Farbe```{r}
+## Code: Fokus durch Farbe
+
+```{r}
 #| echo: true
 #| fig-height: 4.5
 library(ggplot2)
@@ -2104,43 +2123,51 @@ ggplot(mpg_data, aes(x = manufacturer, y = mean_hwy, fill = highlight)) +
 
 ```
 
-##Dashboards: Das CockpitEin Dashboard ist **keine** Data Story. Ein Dashboard ist ein Überwachungsinstrument.
+## Dashboards: Das Cockpit
+
+Ein Dashboard ist **keine** Data Story. Ein Dashboard ist ein Überwachungsinstrument.
 
 **Das Auto-Dashboard-Prinzip:**
 
-* Sie starren es nicht die ganze Zeit an.
-* Sie schauen kurz drauf, um zu sehen, ob alles okay ist.
-* Wenn eine Warnleuchte blinkt, brauchen Sie Details.
+-   Sie starren es nicht die ganze Zeit an.
+-   Sie schauen kurz drauf, um zu sehen, ob alles okay ist.
+-   Wenn eine Warnleuchte blinkt, brauchen Sie Details.
 
-##Design-Prinzipien für Dashboards1. **Die 5-Sekunden-Regel:** Kann der Nutzer in 5 Sekunden sagen, ob er handeln muss?
-2. **Inverted Pyramid:**
-* **Oben:** Wichtigste KPIs (Big Numbers).
-* **Mitte:** Trends und Verläufe (Kontext).
-* **Unten:** Datentabellen und Details (Granularität).
+## Design-Prinzipien für Dashboards
 
+1.  **Die 5-Sekunden-Regel:** Kann der Nutzer in 5 Sekunden sagen, ob er handeln muss?
+2.  **Inverted Pyramid:**
 
-3. **F-Pattern:** Wir lesen von oben links nach rechts unten. Das Wichtigste gehört nach oben links!
+-   **Oben:** Wichtigste KPIs (Big Numbers).
+-   **Mitte:** Trends und Verläufe (Kontext).
+-   **Unten:** Datentabellen und Details (Granularität).
 
-##Bitte keine Tachos (Gauges)!::::: columns
+3.  **F-Pattern:** Wir lesen von oben links nach rechts unten. Das Wichtigste gehört nach oben links!
+
+## Bitte keine Tachos (Gauges)!
+
+::::: columns
 ::: {.column width="50%"}
 **Gauges sind Platzverschwendung:**
 
-* Sie verbrauchen viel Platz.
-* Sie zeigen oft nur eine einzige Zahl.
-* Sie sind schwer zu vergleichen.
+-   Sie verbrauchen viel Platz.
+-   Sie zeigen oft nur eine einzige Zahl.
+-   Sie sind schwer zu vergleichen.
 :::
 
 ::: {.column width="50%"}
 **Besser: Bullet Charts**
 
-* Zeigen Ist-Wert (Balken).
-* Zeigen Ziel-Wert (Strich).
-* Zeigen qualitative Bereiche (Hintergrund: schlecht/mittel/gut).
-* Brauchen extrem wenig Platz.
+-   Zeigen Ist-Wert (Balken).
+-   Zeigen Ziel-Wert (Strich).
+-   Zeigen qualitative Bereiche (Hintergrund: schlecht/mittel/gut).
+-   Brauchen extrem wenig Platz.
 :::
 :::::
 
-##Bullet Chart Alternative (einfach)```{r}
+## Bullet Chart Alternative (einfach)
+
+```{r}
 #| echo: false
 #| fig-height: 3
 library(ggplot2)
@@ -2171,138 +2198,156 @@ ggplot(df_bullet, aes(x = metric, y = current)) +
 
 ```
 
-##Interaktivität in DashboardsWenn wir digitale Produkte bauen, erwarten Nutzer heute Interaktivität.
+## Interaktivität in Dashboards
+
+Wenn wir digitale Produkte bauen, erwarten Nutzer heute Interaktivität.
 
 **Shneiderman’s Mantra der Visualisierung:**
 
-1. **Overview first**,
-2. **zoom and filter**,
-3. **then details-on-demand**.
+1.  **Overview first**,
+2.  **zoom and filter**,
+3.  **then details-on-demand**.
 
 *Lassen Sie den Nutzer nicht in Rohdaten ertrinken. Geben Sie ihm die Kontrolle über die Detailtiefe.*
 
-##Übung: Das Dashboard-KonzeptEntwerfen Sie (auf Papier/Miro) ein Dashboard-Konzept für das digitale Produkt, das Sie in diesem Semester konzipiert haben.
+## Übung: Das Dashboard-Konzept
 
-1. **Persona:** Wer ist der Nutzer des Dashboards? (CEO? Content Manager? Redakteur?)
-2. **KPIs:** Welche **3 Metriken** müssen ganz oben als "Big Numbers" stehen?
-3. **Action:** Welche Handlung soll ausgelöst werden, wenn eine Ampel auf "Rot" springt?
+Entwerfen Sie (auf Papier/Miro) ein Dashboard-Konzept für das digitale Produkt, das Sie in diesem Semester konzipiert haben.
 
-##Nächste Schritte* Überlegen Sie sich die "Story" für Ihre Abschlusspräsentation.
-* Bereiten Sie die Argumente vor: Welches Problem löst Ihr Produkt basierend auf welchen Daten?
-* **Nächste Sitzung:** Kritischer Umgang mit Daten, Ethik und KI.
+1.  **Persona:** Wer ist der Nutzer des Dashboards? (CEO? Content Manager? Redakteur?)
+2.  **KPIs:** Welche **3 Metriken** müssen ganz oben als "Big Numbers" stehen?
+3.  **Action:** Welche Handlung soll ausgelöst werden, wenn eine Ampel auf "Rot" springt?
+
+## Nächste Schritte
+
+-   Überlegen Sie sich die "Story" für Ihre Abschlusspräsentation.
+-   Bereiten Sie die Argumente vor: Welches Problem löst Ihr Produkt basierend auf welchen Daten?
+-   **Nächste Sitzung:** Kritischer Umgang mit Daten, Ethik und KI.
 
 ------------------------------------------------------------------------
 
 # Sitzung 12: Ethik, Recht & Critical Data Studies
 
+## „Raw Data“ is an Oxymoron
 
-## „Raw Data“ is an Oxymoron> „Raw data is both an oxymoron and a bad idea; on the contrary, data should be cooked with care.“
-> — *Geoffrey C. Bowker*
+> „Raw data is both an oxymoron and a bad idea; on the contrary, data should be cooked with care.“ — *Geoffrey C. Bowker*
 
-**Die Kernbotschaft:**
-Daten sind niemals neutral. Sie sind immer das Ergebnis einer Entscheidung:
+**Die Kernbotschaft:** Daten sind niemals neutral. Sie sind immer das Ergebnis einer Entscheidung:
 
-* Was wurde gemessen?
-* Wer wurde gemessen?
-* Was wurde weggelassen?
+-   Was wurde gemessen?
+-   Wer wurde gemessen?
+-   Was wurde weggelassen?
 
-##Critical Data StudiesWir müssen digitale Produkte und Daten nicht nur *nutzen*, sondern *hinterfragen*.
+## Critical Data Studies
 
 **Drei Ebenen der Kritik:**
 
-1. **Datenbasis:** Wer fehlt in den Daten? (Invisible Data)
-2. **Algorithmus:** Verstärkt das Modell Vorurteile? (Algorithmic Bias)
-3. **Interface:** Manipulieren wir den Nutzer? (Dark Patterns)
+1.  **Datenbasis:** Wer fehlt in den Daten? (Invisible Data)
+2.  **Algorithmus:** Verstärkt das Modell Vorurteile? (Algorithmic Bias)
+3.  **Interface:** Manipulieren wir den Nutzer? (Dark Patterns)
 
-##1. Algorithmic BiasWenn wir KI mit historischen Daten trainieren, lernt die KI historische Vorurteile.
+## 1. Algorithmic Bias
+
+Wenn wir KI mit historischen Daten trainieren, lernt die KI historische Vorurteile.
 
 **Beispiel: Amazon Recruiting Engine (2018)**
 
-* Trainiert mit Lebensläufen der letzten 10 Jahre (meist Männer).
-* Die KI lernte: „Männer sind besser als Frauen“.
-* Folge: Lebensläufe mit dem Wort „women's“ (z.B. „women's chess club“) wurden abgewertet.
-* **Ergebnis:** Das Projekt wurde eingestampft.
+-   Trainiert mit Lebensläufen der letzten 10 Jahre (meist Männer).
+-   Die KI lernte: „Männer sind besser als Frauen“.
+-   Folge: Lebensläufe mit dem Wort „women's“ (z.B. „women's chess club“) wurden abgewertet.
+-   **Ergebnis:** Das Projekt wurde eingestampft.
 
-##Bias in, Bias out*(Platzhalter für eine Grafik: Ein Trichter, oben kommen diverse Menschen rein, der Filter ist "Historical Hiring Data", unten kommen nur weiße Männer raus)*
+## Bias in, Bias out
 
-##Arten von Bias* **Selection Bias:** Die Daten repräsentieren nicht die Realität (siehe Sitzung 2).
-* **Historical Bias:** Die Welt war früher ungerechter als heute – Daten konservieren diesen Zustand.
-* **Labeling Bias:** Wer entscheidet, was „gut“ oder „schlecht“ ist? (Beispiel: Kriminologie-Daten).
+![](images/11_002.png)
 
-##2. Rechtliche Grundlagen (High Level)Als Content-Manager sind Sie keine Juristen, aber Sie haften oft mit.
+## Arten von Bias
+
+-   **Selection Bias:** Die Daten repräsentieren nicht die Realität (siehe Sitzung 2).
+-   **Historical Bias:** Die Welt war früher ungerechter als heute – Daten konservieren diesen Zustand.
+-   **Labeling Bias:** Wer entscheidet, was „gut“ oder „schlecht“ ist? (Beispiel: Kriminologie-Daten).
+
+## 2. Rechtliche Grundlagen (High Level)
+
+Als Content-Manager sind Sie keine Juristen, aber Sie haften oft mit.
 
 **DSGVO (GDPR) – Die Big 3 für uns:**
 
-1. **Recht auf Vergessenwerden:** Nutzer können Löschung verlangen. Sind Ihre Systeme bereit dafür?
-2. **Privacy by Design:** Datenschutz muss Voreinstellung sein, nicht Opt-in.
-3. **Zweckbindung:** Daten, die für den Newsletter gesammelt wurden, dürfen nicht einfach an Dritte verkauft werden.
+1.  **Recht auf Vergessenwerden:** Nutzer können Löschung verlangen. Sind Ihre Systeme bereit dafür?
+2.  **Privacy by Design:** Datenschutz muss Voreinstellung sein, nicht Opt-in.
+3.  **Zweckbindung:** Daten, die für den Newsletter gesammelt wurden, dürfen nicht einfach an Dritte verkauft werden.
 
-##Die Cookie-Lüge (Consent Fatigue)* Haben Sie jemals *wirklich* die AGB gelesen?
-* **Consent Banner** sind oft so gestaltet, dass man entnervt auf „Alles akzeptieren“ klickt.
-* Rechtlich: Eine Einwilligung muss **freiwillig**, **informiert** und **eindeutig** sein.
-* Viele aktuelle Banner sind rechtlich in einer Grauzone.
+## Die Cookie-Lüge (Consent Fatigue)
 
-##3. Dark Patterns**Definition:**
-User Interface Design, das Nutzer dazu bringt, Dinge zu tun, die sie eigentlich nicht tun wollten.
+-   Haben Sie jemals *wirklich* die AGB gelesen?
+-   **Consent Banner** sind oft so gestaltet, dass man entnervt auf „Alles akzeptieren“ klickt.
+-   Rechtlich: Eine Einwilligung muss **freiwillig**, **informiert** und **eindeutig** sein.
+-   Viele aktuelle Banner sind rechtlich in einer Grauzone.
+
+## 3. Dark Patterns
+
+**Definition:** User Interface Design, das Nutzer dazu bringt, Dinge zu tun, die sie eigentlich nicht tun wollten.
 
 Abgrenzung zum **Nudging** (Sitzung 5):
 
-* *Nudging:* Hilft dem Nutzer (z.B. „Möchten Sie Apfel statt Schokolade?“).
-* *Dark Pattern:* Hilft nur dem Unternehmen (z.B. Versicherung unterjubeln).
+-   *Nudging:* Hilft dem Nutzer (z.B. „Möchten Sie Apfel statt Schokolade?“).
+-   *Dark Pattern:* Hilft nur dem Unternehmen (z.B. Versicherung unterjubeln).
 
 ## Dark Pattern Hall of Fame
 
-1. **Roach Motel:** Man kommt leicht rein, aber schwer wieder raus (z.B. Zeitungsabo kündigen nur per Fax).
-2. **Confirmshaming:** „Nein, ich möchte kein Geld sparen und dumm bleiben.“
-3. **Sneak into Basket:** Plötzlich liegt eine Reiseversicherung im Warenkorb.
-4. **Urgency:** „Nur noch 2 Zimmer verfügbar!“ (Oft fake).
+1.  **Roach Motel:** Man kommt leicht rein, aber schwer wieder raus (z.B. Zeitungsabo kündigen nur per Fax).
+2.  **Confirmshaming:** „Nein, ich möchte kein Geld sparen und dumm bleiben.“
+3.  **Sneak into Basket:** Plötzlich liegt eine Reiseversicherung im Warenkorb.
+4.  **Urgency:** „Nur noch 2 Zimmer verfügbar!“ (Oft fake).
 
-##Beispiel: Confirmshaming> **Popup:** "Möchten Sie unseren Newsletter mit Experten-Tipps?"
-> [ **JA, ICH WILL EXPERTE WERDEN** ] (Grüner, fetter Button)
-> [ Nein, ich mag schlechte Entscheidungen ] (Kleiner, grauer Text)
+## Beispiel: Confirmshaming
+
+> **Popup:** "Möchten Sie unseren Newsletter mit Experten-Tipps?" \[ **JA, ICH WILL EXPERTE WERDEN** \] (Grüner, fetter Button) \[ Nein, ich mag schlechte Entscheidungen \] (Kleiner, grauer Text)
 
 **Diskussion:** Ist das cleveres Marketing oder unethisch?
 
-##4. KI & Content CreationMit Generative AI (ChatGPT, Midjourney) entstehen neue Probleme:
+## 4. KI & Content Creation
 
-* **Urheberrecht:** Wem gehört ein Bild, das eine KI aus Millionen geklauten Bildern erstellt hat?
-* **Deepfakes:** Wenn wir Video und Audio nicht mehr trauen können – was bedeutet das für Markenvertrauen?
-* **Halluzinationen:** KI erfindet Fakten. Wer prüft das? (Stichwort: Brand Safety).
+Mit Generative AI (ChatGPT, Midjourney) entstehen neue Probleme:
 
-##Der EU AI ActDas erste umfassende Gesetz zur Regulierung von KI.
+-   **Urheberrecht:** Wem gehört ein Bild, das eine KI aus Millionen geklauten Bildern erstellt hat?
+-   **Deepfakes:** Wenn wir Video und Audio nicht mehr trauen können – was bedeutet das für Markenvertrauen?
+-   **Halluzinationen:** KI erfindet Fakten. Wer prüft das? (Stichwort: Brand Safety).
 
-* **Risiko-basierter Ansatz:**
-* *Unannehmbares Risiko:* Social Scoring, manipulative KI -> **Verboten**.
-* *Hochrisiko:* HR-Tools, Kreditvergabe -> **Strenge Auflagen**.
-* *Geringes Risiko:* Chatbots, Spamfilter -> **Transparenzpflicht** (User muss wissen, dass er mit einer Maschine spricht).
+## Der EU AI Act
 
+Das erste umfassende Gesetz zur Regulierung von KI.
 
+-   **Risiko-basierter Ansatz:**
+-   *Unannehmbares Risiko:* Social Scoring, manipulative KI -\> **Verboten**.
+-   *Hochrisiko:* HR-Tools, Kreditvergabe -\> **Strenge Auflagen**.
+-   *Geringes Risiko:* Chatbots, Spamfilter -\> **Transparenzpflicht** (User muss wissen, dass er mit einer Maschine spricht).
 
-## Ethische Leitlinien für Ihr ProjektWenn Sie unsicher sind, nutzen Sie diese Tests:
+## Ethische Leitlinien für Ihr Projekt
 
-1. **Der Mom-Test:** Würde ich wollen, dass meine Mutter so getrackt/behandelt wird?
-2. **Der Front-Page-Test:** Wäre es mir peinlich, wenn meine Datennutzung auf der Titelseite der Zeitung steht?
-3. **Der Regret-Test:** Würde der Nutzer seine Entscheidung bereuen, wenn er wüsste, was wir wissen?
+Wenn Sie unsicher sind, nutzen Sie diese Tests:
 
-## Übung: The Evil Marketer*Drehen wir den Spieß um, um die Mechanismen zu verstehen.*
+1.  **Der Mom-Test:** Würde ich wollen, dass meine Mutter so getrackt/behandelt wird?
+2.  **Der Front-Page-Test:** Wäre es mir peinlich, wenn meine Datennutzung auf der Titelseite der Zeitung steht?
+3.  **Der Regret-Test:** Würde der Nutzer seine Entscheidung bereuen, wenn er wüsste, was wir wissen?
 
-**Szenario:**
-Sie sollen für eine (fiktive) Firma "SugarRush" eine App konzipieren, die möglichst viel Süßigkeiten an Kinder verkauft.
+## Übung: The Evil Marketer
 
-**Aufgabe:**
-Entwickeln Sie (böse) Ideen:
+**Szenario:** Sie sollen für eine (fiktive) Firma "SugarRush" eine App konzipieren, die möglichst viel Süßigkeiten an Kinder verkauft.
 
-1. Welche Daten sammeln Sie?
-2. Welches Dark Pattern nutzen Sie?
-3. Wie nutzen Sie KI zur Manipulation?
+**Aufgabe:** Entwickeln Sie (böse) Ideen:
+
+1.  Welche Daten sammeln Sie?
+2.  Welches Dark Pattern nutzen Sie?
+3.  Wie nutzen Sie KI zur Manipulation?
 
 *(Danach: Diskussion, wie man genau das verhindert)*
 
 ## Nächste Schritte
 
-* Prüfen Sie Ihr Konzept auf ethische Fallstricke.
-* Haben Sie Dark Patterns in Ihren Wireframes? Wenn ja: Entfernen!
-* **Nächste Sitzung:** Automatisierung, Personalisierung & Abschluss.
+-   Prüfen Sie Ihr Konzept auf ethische Fallstricke.
+-   Haben Sie Dark Patterns in Ihren Wireframes? Wenn ja: Entfernen!
+-   **Nächste Sitzung:** Automatisierung, Personalisierung & Abschluss.
 
 ------------------------------------------------------------------------
 
@@ -2312,80 +2357,85 @@ Entwickeln Sie (böse) Ideen:
 
 Wir haben jetzt:
 
-1. Daten analysiert & Zielgruppen segmentiert.
-2. Tolle Inhalte & Strategien entwickelt.
-3. Dashboards gebaut.
+1.  Daten analysiert & Zielgruppen segmentiert.
+2.  Tolle Inhalte & Strategien entwickelt.
+3.  Dashboards gebaut.
 
-**Aber:** Wir können nicht jeden einzelnen Kunden manuell anschreiben und ihm das passende PDF schicken.
-**Lösung:** Automatisierung & Personalisierung.
+**Aber:** Wir können nicht jeden einzelnen Kunden manuell anschreiben und ihm das passende PDF schicken. **Lösung:** Automatisierung & Personalisierung.
 
 ## Von der Gießkanne zum PräzisionsgewehrFrüher (Mass Media):
 
-* Eine Botschaft an alle ("One size fits all").
-* Hoher Streuverlust.
+-   Eine Botschaft an alle ("One size fits all").
+-   Hoher Streuverlust.
 
 Heute (Data-Driven Content):
 
-* **Right Content**
-* to the **Right Person**
-* at the **Right Time**
-* on the **Right Channel**.
+-   **Right Content**
+-   to the **Right Person**
+-   at the **Right Time**
+-   on the **Right Channel**.
 
 Das geht nur durch Software.
 
-## Marketing AutomationAutomatisierung bedeutet nicht, dass ein Roboter Texte schreibt (noch nicht ganz). Es bedeutet, dass **Regelwerke** ausgeführt werden.
+## Marketing Automation
 
-**Wenn** User X das Whitepaper herunterlädt,
-**Dann** warte 2 Tage
-**Und** schicke E-Mail Y.
+Automatisierung bedeutet nicht, dass ein Roboter Texte schreibt (noch nicht ganz). Es bedeutet, dass **Regelwerke** ausgeführt werden.
 
-**Wenn** E-Mail Y geöffnet wird,
-**Dann** informiere Sales-Team.
+**Wenn** User X das Whitepaper herunterlädt, **Dann** warte 2 Tage **Und** schicke E-Mail Y.
 
-## Personalisierung vs. Customization| Personalisierung | Customization |
-| --- | --- |
-| **System-gesteuert** | **User-gesteuert** |
-| Wir nutzen Daten, um Inhalte anzupassen. | Der User stellt sich sein Dashboard selbst ein. |
-| Bsp: Spotify "Dein Mix der Woche" | Bsp: iPhone Homescreen Widgets |
-| "Wir wissen, was du willst." | "Du sagst uns, was du willst." |
+**Wenn** E-Mail Y geöffnet wird, **Dann** informiere Sales-Team.
 
-## Die Personalisierungspyramide1. 
+## Personalisierung vs. Customization\| Personalisierung \| Customization \|
 
-**Kosmetisch:** "Hallo *Vorname*!" (Basics)
-2. **Segment-basiert:** "Nutzer aus Hamburg sehen Regenjacken, Nutzer aus München sehen Badehosen."
-3. **Verhaltens-basiert:** "Weil du Artikel A, B und C gelesen hast, empfehlen wir D." (Netflix)
-4. **Prädiktiv (AI):** "Bevor du überhaupt suchst, wissen wir, dass du kündigen willst, und bieten dir einen Rabatt an." (Next Best Action).
+| --- \| --- \|
+| **System-gesteuert** \| **User-gesteuert** \|
+| Wir nutzen Daten, um Inhalte anzupassen. \| Der User stellt sich sein Dashboard selbst ein. \|
+| Bsp: Spotify "Dein Mix der Woche" \| Bsp: iPhone Homescreen Widgets \|
+| "Wir wissen, was du willst." \| "Du sagst uns, was du willst." \|
 
-## Predictive Analytics: Next Best ActionWir nutzen historische Daten, um die **Wahrscheinlichkeit** einer Handlung vorherzusagen.
+## Die Personalisierungspyramide
 
-* *Churn Score:* Wie wahrscheinlich ist es, dass der Kunde geht?
-* *Lead Score:* Wie wahrscheinlich ist es, dass er kauft?
+1.  **Kosmetisch:** "Hallo *Vorname*!" (Basics)
+2.  **Segment-basiert:** "Nutzer aus Hamburg sehen Regenjacken, Nutzer aus München sehen Badehosen."
+3.  **Verhaltens-basiert:** "Weil du Artikel A, B und C gelesen hast, empfehlen wir D." (Netflix)
+4.  **Prädiktiv (AI):** "Bevor du überhaupt suchst, wissen wir, dass du kündigen willst, und bieten dir einen Rabatt an." (Next Best Action).
+
+## Predictive Analytics: Next Best Action
+
+Wir nutzen historische Daten, um die **Wahrscheinlichkeit** einer Handlung vorherzusagen.
+
+-   *Churn Score:* Wie wahrscheinlich ist es, dass der Kunde geht?
+-   *Lead Score:* Wie wahrscheinlich ist es, dass er kauft?
 
 **Content-Konsequenz:**
 
-* Hoher Churn Score \rightarrow Sende "Treue-Geschenk".
-* Hoher Lead Score \rightarrow Sende "Preisliste".
+-   Hoher Churn Score \rightarrow Sende "Treue-Geschenk".
+-   Hoher Lead Score \rightarrow Sende "Preisliste".
 
-## Blick in die Zukunft: Synthetic MediaWir bewegen uns von **Static Content** zu **Generative Content**.
+## Blick in die Zukunft: Synthetic Media
 
-* **Heute:** Wir schreiben einen Artikel und hoffen, dass er passt.
-* **Morgen (GEO):** Eine KI generiert den Artikel *im Moment des Aufrufs* exakt für diesen einen Nutzer, basierend auf seinem Vorwissen und Kontext.
+Wir bewegen uns von **Static Content** zu **Generative Content**.
+
+-   **Heute:** Wir schreiben einen Artikel und hoffen, dass er passt.
+-   **Morgen (GEO):** Eine KI generiert den Artikel *im Moment des Aufrufs* exakt für diesen einen Nutzer, basierend auf seinem Vorwissen und Kontext.
 
 Die Rolle des "Content Creators" wandelt sich zum "Content Architect" (der die Regeln und Prompts definiert).
 
-## Zusammenfassung des Semesters: Der rote FadenLassen Sie uns zurückblicken auf das, was wir gelernt haben.
+## Zusammenfassung des Semesters: Der rote Faden
 
-## Der Golden Thread des Kurses1. **Mindset:** Daten sind nicht langweilig, sondern der Treibstoff für Relevanz.
-2. **Verstehen:** Wer ist die Zielgruppe? (Nicht raten, sondern messen/fragen).
-3. **Strategie:** Lean Content Canvas & Kanäle (Push vs. Pull).
-4. **Optimierung:** Testing (A/B) und Mining (Muster erkennen).
-5. **Kommunikation:** Visualisierung & Storytelling (Management überzeugen).
-6. **Verantwortung:** Ethik & Bias (Nicht böse sein).
+Lassen Sie uns zurückblicken auf das, was wir gelernt haben.
 
+## Der Golden Thread des Kurses
 
+1.  **Mindset:** Daten sind nicht langweilig, sondern der Treibstoff für Relevanz.
+2.  **Verstehen:** Wer ist die Zielgruppe? (Nicht raten, sondern messen/fragen).
+3.  **Strategie:** Lean Content Canvas & Kanäle (Push vs. Pull).
+4.  **Optimierung:** Testing (A/B) und Mining (Muster erkennen).
+5.  **Kommunikation:** Visualisierung & Storytelling (Management überzeugen).
+6.  **Verantwortung:** Ethik & Bias (Nicht böse sein).
 
-## Schlusswort> "Without data, you’re just another person with an opinion."
-> — *W. Edwards Deming*
+## Schlusswort
 
-> "But data without a story is just a spreadsheet."
-> — *Dieser Kurs*
+> "Without data, you’re just another person with an opinion." — *W. Edwards Deming*
+
+> "But data without a story is just a spreadsheet." — *Dieser Kurs*
