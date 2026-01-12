@@ -61,7 +61,7 @@ interpret_voc_ollama <- function(voc_json, model) {
 ```
 
 ```{r Ausfuehrung}
-result <- interpret_voc_ollama(kunden_feedback_json, model = "llama3.1")
+result <- interpret_voc_ollama(kunden_feedback_json, model = "phi4-mini:latest")
 cat(result)
 ```
 
