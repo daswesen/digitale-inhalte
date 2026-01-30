@@ -1058,11 +1058,10 @@ The greatest value of a picture is when it forces us to notice what we never exp
 
 ## Warum Datenvisualisierung? II
 
-- Reduktion von Cognitive Load (Gehirn-Entlastung)
-- Niemand versteht eine Excel-Tabelle mit 10.000 Zeilen in 5 Sekunden. Ein Streudiagramm verstehen wir sofort.
-- In der „Aufmerksamkeitsökonomie“ haben Stakeholder und User keine Zeit. 
-- Visualisierung ist der schnellste Weg, Informationen ins Gehirn des Gegenübers zu transportieren.  
-
+-   Reduktion von Cognitive Load (Gehirn-Entlastung)
+-   Niemand versteht eine Excel-Tabelle mit 10.000 Zeilen in 5 Sekunden. Ein Streudiagramm verstehen wir sofort.
+-   In der „Aufmerksamkeitsökonomie“ haben Stakeholder und User keine Zeit.
+-   Visualisierung ist der schnellste Weg, Informationen ins Gehirn des Gegenübers zu transportieren.
 
 ## Warum Datenvisualisierung III (Anscombe)
 
@@ -1070,15 +1069,15 @@ The greatest value of a picture is when it forces us to notice what we never exp
 
 ## Warum Datenvisualisierung IV
 
-- Überzeugungskraft (Data Storytelling)
-- Zahlen sind abstrakt, Bilder sind emotionaler und überzeugender. 
-- Wer Budget für ein digitales Produkt will, muss das Management mit Charts überzeugen, nicht mit Rohdaten.  
+-   Überzeugungskraft (Data Storytelling)
+-   Zahlen sind abstrakt, Bilder sind emotionaler und überzeugender.
+-   Wer Budget für ein digitales Produkt will, muss das Management mit Charts überzeugen, nicht mit Rohdaten.
 
 ## Warum Datenvisualisierung V
 
-- Data Literacy ist ein Karriere-Booster
-- Content-Erstellung wird zunehmend automatisiert (KI)
-- Die Fähigkeit, Ergebnisse zu interpretieren und darzustellen, wird die Kompetenz sein, die den Menschen (noch) von der KI unterscheidet.
+-   Data Literacy ist ein Karriere-Booster
+-   Content-Erstellung wird zunehmend automatisiert (KI)
+-   Die Fähigkeit, Ergebnisse zu interpretieren und darzustellen, wird die Kompetenz sein, die den Menschen (noch) von der KI unterscheidet.
 
 ## 5 wichtige Schritte
 
@@ -2039,9 +2038,294 @@ ggplot(treemap_data, aes(area = value, fill = category, label = subcategory)) +
 
 ------------------------------------------------------------------------
 
+## Einleitung
 
-## Schlusswort
+-   Metaphern sind mehr als Deutschunterricht.
+-   Sie bestimmen unser Denken und Handeln unbewusst.
+-   Sie gestalten unsere Beziehung zur Künstlichen Intelligenz.
+-   **Ziel:** Die richtigen Metaphern finden.
 
-> "Without data, you’re just another person with an opinion." — *W. Edwards Deming*
+::: notes
+Bei Metaphern denken wir meistens an den Deutschunterricht, aber tatsächlich bestimmen sie unser Denken und Handeln stärker als es uns bewusst ist. Und Metaphern bestimmen auch, wie wir unsere Beziehung zur Künstlichen Intelligenz gestalten werden. Es ist wichtig, dass wir die richtigen Metaphern verwenden.
+:::
 
-> "But data without a story is just a spreadsheet." — *Dieser Kurs*
+## Wie Metaphern funktionieren
+
+-   Übertragung von Eigenschaften:
+    -   Vom **Quellbereich** (bekannt).
+    -   Auf den **Zielbereich** (unbekannt/abstrakt).
+-   Mechanismus: **Highlighting und Hiding**.
+    -   Aspekte werden betont.
+    -   Andere Aspekte werden ausgeblendet.
+
+::: notes
+Warum bestimmen Metaphern unser Handeln? Eine Metapher überträgt Eigenschaften von einem Bereich (dem Quellbereich) auf einen anderen (den Zielbereich), ohne dass diese beiden Dinge buchstäblich identisch sind \[1\]. Dabei werden bestimmte Aspekte betont und andere ausgeblendet \[2\]. Oft helfen uns Metaphern, Sachverhalte schneller zu verstehen, da wir den Quellbereich bereits erkennen und unser Wissen daraus übertragen können.
+:::
+
+## Beispiel: Zeit ist Geld (1/2)
+
+-   **Quellbereich:** Geld.
+-   **Zielbereich:** Zeit.
+-   Sprachliche Manifestation:
+    -   Verschwenden, investieren, sparen.
+    -   "Hat mich eine Stunde gekostet".
+    -   "Zeit verlieren", "Zeit schenken".
+
+::: notes
+Doch oft gehen Metaphern viel weiter und bestimmen die Art, wie wir mit dem Zielbereich umgehen. Wir sagen zum Beispiel, dass Zeit Geld ist, Geld als Quellbereich und Zeit als Zielbereich, ein metaphorisches Konzept, das sich in der Sprache manifestiert hat \[3\]: Wir verschwenden Zeit. Wir investieren Zeit. Etwas spart Zeit ein. Der Stau hat mich eine Stunde gekostet. Ist das Deine Zeit wert? Ich habe eine Stunde beim Warten verloren. Kannst Du mir eine Minute schenken?
+:::
+
+## Beispiel: Zeit ist Geld (2/2)
+
+-   **Konsequenz:** Zeit als limitierte, teilbare Ressource.
+-   **Kulturelle Bedingtheit:** Nicht universell.
+-   **Der blinde Fleck (Hiding):**
+    -   Der emotionale Wert des Moments.
+    -   Erlebnisse jenseits der Ökonomie.
+
+::: notes
+Zeit ist eine limitierte Ressource, und wir müssen mit ihr gewissenhaft umgehen, um unsere Ziele zu erreichen \[4\]. Und tatsächlich werden manche Arbeiter pro Stunde bezahlt, wir kriegen ein monatliches Gehalt, früher haben wir Telefonie pro Zeiteinheit bezahlt. Wir merken das schon gar nicht mehr, weil es so tief in unserer Gesellschaft verankert ist. Das ist nicht in jeder Kultur so. Die Betonung der Zeit-ist-Geld-Metapher liegt darauf, dass wir Zeit in Scheiben schneiden, wovon jede etwas wert ist. Aber sie blendet aus, dass es Momente gibt, die für uns besonders wertvoll sind, zum Beispiel der erste Kuss.
+:::
+
+## Beispiel: Diskussion ist Krieg
+
+-   **Vokabular des Kampfes:**
+    -   "Unhaltbare" Behauptung (Festung).
+    -   Argumente "abschmettern" oder "angreifen".
+    -   "Verteidigungsstrategie".
+    -   "Totschlagargument".
+
+::: notes
+Ein anderes Beispiel sind Diskussionen mit jemandem, der anderer Meinung ist. Diskussionen sind dann wie Kämpfe \[2, 5\]: Deine Behauptung ist unhaltbar (wie eine Festung). Er hat meine Argumente abgeschmettert. Ich habe seine Kritik angegriffen. Sie hat eine Verteidigungsstrategie. Er hat ins Schwarze getroffen. Das war ein Totschlagargument.
+:::
+
+## Realitätserzeugung
+
+-   Metaphern beschreiben Realität nicht nur.
+-   **Sie erschaffen sie.**
+-   "Argument is War":
+    -   Fokus auf Gewinner und Verlierer.
+    -   Ziel: Sieg statt Erkenntnis.
+
+::: notes
+Aber diese Metapher des Kampfes beschreibt nicht nur die Realität, sie erschafft sie auch \[6\]. Bei einem Kampf gibt es einen Gewinner und einen Verlierer. Wir gehen in eine Diskussion, um zu gewinnen.
+:::
+
+## Alternative: Das Bauwerk
+
+-   **Diskussion als gemeinsame Konstruktion.**
+    -   "Fundament" prüfen.
+    -   "Darauf aufbauen".
+-   **Kultur:** "Argument is a Building" ist im Deutschen stark verankert.
+-   **Ziel:** Gemeinsam etwas erschaffen (Win-Win).
+
+::: notes
+Was wenn eine Diskussion mit einer anderen Metapher belegt wäre? Zum Beispiel mit einem Bauwerk? Wenn wir unsere Argumente nutzen, um gemeinsam etwas zu bauen \[7\]. Das erleben wir zum Beispiel, wenn wir gemeinsam eine Präsentation erstellen. Passt das Fundament? Können wir auf etwas aufbauen? Trägt der Gedanke den Flow? Hier können wir gemeinsam gewinnen. Was wenn Liebe kein Battlefield wäre, wie es Pat Benatar besang, sondern ein gemeinsam erschaffenes Kunstwerk \[8\]? Wenn wir eine neue Metapher einführen und ernst nehmen, ändern wir unser Handeln.
+:::
+
+## Computer-Metaphern
+
+-   Der Computer als Werkzeug.
+-   **Die Schreibtisch-Metapher (Desktop):**
+    -   Ordner, Papierkorb, Akten.
+    -   Hilft beim Verstehen und Bedienen.
+-   **Grenzen:** Unendliche Verschachtelung von Unterordnern bricht das physische Bild.
+
+::: notes
+Auch in der Computerwelt kennen wir Metaphern. Ein Computer ist kühl gesehen ein Werkzeug zur Verarbeitung von Daten. Durch die Schreibtischmetapher öffnet sich aber eine andere Welt. Zwar soll die Metapher nur helfen, einen Computer einfacher zu verstehen und zu bedienen: Wir haben einen Desktop und einen Mülleimer sowohl in Windows als auch MacOS und Linux, so wie wir es von einem normalen Büro kennen. Anders als im realen Leben können wir unendlich viele Ordner haben. Nur spätestens da, wo wir Ordner in Unterordner stecken und diese wiederum in Unterordner, da ist die Metapher vorbei. Metaphern blenden eben manche Sachverhalte des Zielbereichs aus.
+:::
+
+## KI-Metaphern: Die Biologie
+
+-   **Das "Elektronengehirn":**
+    -   Begriff aus den 1950ern.
+    -   Hilfsbrücke für Informationsverarbeitung.
+-   **Biologische Begriffe:**
+    -   "Virus", "infizieren".
+    -   "Neuronale Netze".
+
+::: notes
+Nun kommen wir zur Künstlichen Intelligenz. Welche Metaphern verwenden wir für die KI bereits? Ein Gehirn in hellen blauen Farben, wie wir es fast immer in Abbildungen sehen, wenn es um KI geht \[9\]? Tatsächlich sagte man schon früher zu Computern, dass sie Elektronengehirne seien, die ersten Belege finden sich in den 1950er Jahren wieder, erst in den 90er Jahren verschwand der Begriff langsam wieder \[10\]. In einer Zeit, wo Computer etwas noch komplett Neues waren, half diese Metapher zu verstehen, dass ein Computer Informationen verarbeitet. Allerdings nutzen wir hier einen biologischen Begriff, das Gehirn, um damit einen Computer zu erklären, und wir sehen diese Metapher auch, wenn wir von einem Virus sprechen, die einen Computer infizieren, als ob er ein Immunsystem hätte. Hier beginnt langsam eine Vermenschlichung.
+:::
+
+## Die Zuspitzung der Vermenschlichung
+
+-   Zuschreibung von Eigenleben:
+    -   "Der Laptop zickt".
+    -   "Die KI halluziniert".
+-   **Anthropomorphismus:**
+    -   Wir sagen: "Die KI hat gelernt".
+    -   Realität: Statistische Wahrscheinlichkeitsoptimierung.
+
+::: notes
+Und diese wird in den Folgejahren nur noch stärker. Denn irgendwann weigert sich der Computer, ein Programm zu öffnen, als ob ein Computer eine eigene Agenda hätte. Oder mein Laptop zickt herum. Heute sagen wir, dass eine KI halluziniert \[11\]. Wir sagen: "Die KI hat gelernt, wie man Schach spielt." (Eigentlich hat sie nur statistische Wahrscheinlichkeiten optimiert) \[12\]. Und da kommen wir zum Anthropomorphismus. Wir schreiben Computersystemen und nun auch der Künstlichen Intelligenz ein Wesen zu, das ein metaphorisches Konzept zu einem Menschen bildet. Wir bilden neuronale Netze und sagen dann, dass wir uns das vom Gehirn abgeschaut haben.
+:::
+
+## Studie: Wahrnehmung von KI
+
+-   **Cheng et al. (2025/2026):**
+    -   Untersuchung über 12 Monate nach ChatGPT-Start.
+-   **Ergebnis:** Soziale Verschiebung.
+-   Anstieg des Anthropomorphismus um **34%**.
+-   Wahrnehmung als "warm" und "menschenähnlich" (Freund/Assistent).
+
+::: notes
+Cheng et al. (2025) untersuchten über einen Zeitraum von 12 Monaten, wie sich das Bild der Nutzer über KI veränderte \[13\]. Sie belegten eine signifikante soziale Verschiebung: Die Menschen nehmen KI zunehmend als "warm" und menschenähnlich wahr (z. B. als "Freund" oder "Assistent" statt als "Werkzeug" oder "Computer"), wobei der Anthropomorphismus im Jahr nach der Einführung von ChatGPT um 34 % anstieg \[13\].
+:::
+
+## Das Problem der falschen Erwartung
+
+-   **Wärme vs. Kompetenz:**
+    -   KI klingt kompetent und menschlich.
+    -   Wir glauben ihr, weil sie "nett" klingt.
+-   **Der Eliza-Effekt:**
+    -   Wir projizieren Empathie, wo nur Code ist.
+    -   Nutzer vermissen "Persönlichkeit" bei Updates.
+
+::: notes
+Aber warum ist das überhaupt ein Problem, dass wir Sprachmodelle vermenschlichen? Weil wir dann Erwartungen an Maschinen haben, die diese nicht erfüllen können \[14\]. Wenn eine KI selbstbewusst Unsinn erzählt, glauben wir es oft, weil sie klingt wie ein kompetenter Mensch. Und damit sind wir beim Eliza-Effekt, nämlich dass wir Maschinen zuschreiben, dass sie uns verstehen, ja sogar vielleicht Empathie zeigen oder Gefühle haben. Wir projizieren Sinn, wo keiner ist. Bei dem Original-Eliza war es vielleicht noch offensichtlich, dass es sich um ein Computerprogramm handelt, aber bei ChatGPT & Co? Als OpenAI ChatGPT 5.0 rausbrachte, wollten so viele Nutzer ihre 4.x Version zurück haben, weil sie ihre Persönlichkeit vermissten!
+:::
+
+## Folgen: Vertrauensseligkeit & Workslop
+
+-   **Blindes Vertrauen:**
+    -   Tonfall (Form) überzeugt mehr als Fakten (Inhalt).
+    -   Sachverhalte werden nicht mehr geprüft.
+-   **Phänomen "Workslop":**
+    -   Gepfuschte Arbeit durch Auslagerung des Denkens.
+    -   Kognitive Schulden.
+
+::: notes
+Und dadurch vertrauen wir dem überzeugten Tonfall, nicht den Fakten. Und weil wir der KI vertrauen, überprüfen wir Sachverhalte nicht mehr. Und darum kommen wir zu dem neuen Phänomen des Workslops, der gepfuschten Arbeit \[15\], weil wir denken, dass wir an diese neuen vermenschlichten Wesen unsere eigene Denkarbeit auslagern können. Würden wir KI nur als ein Werkzeug begreifen und die Limitationen präsent bleiben, würde das nicht passieren. Aber so gehen wir kognitive Schulden ein, weil wir der KI zu sehr vertrauen.
+:::
+
+## Die Büchse der Pandora
+
+-   Die Vermenschlichung ist kaum rückgängig zu machen.
+-   **Frage:** Welche Rolle vergeben wir der KI?
+    -   **Assistent?** (Unterordnung).
+    -   **Co-Pilot?** (Unterstützung).
+-   **Problem:** Wir erwarten Fehlerfreiheit (wie beim Navi).
+
+::: notes
+Pandoras Box ist offen: Wie gehen wir damit um? Wir werden diese Vermenschlichung wahrscheinlich nicht zurückdrängen können \[16\]. So bleibt die Frage, welche Rolle wir der KI vergeben wollen, wenn sie vermenschlicht ist. Ist eine KI ein Assistent? Also eine Rolle, die sich uns unterordnet? Wie der Copilot, der uns unterstützt, wenn wir durch unseren Arbeitsalltag fliegen \[17\]? Ist eine KI ein Coach, der mehr weiß als wir, weil die KI einfach mit mehr Daten trainiert ist als wir jemals werden uns aneignen können? Von einem Assistenten oder einem Co-Piloten erwarte ich, dass er nicht so viele Fehler macht.
+:::
+
+## Metaphern der Unvollkommenheit
+
+-   **Der Praktikant:**
+    -   Fleißig, bemüht.
+    -   Ergebnisse müssen kontrolliert werden.
+    -   *Nachteil:* Diskreditiert echte Praktikanten.
+-   **Der zerstreute Professor:**
+    -   Extremes Wissen.
+    -   Bringt Dinge durcheinander.
+
+::: notes
+Wissend, dass die Sprachmodelle Fehler machen, haben manche den Praktikanten als Metapher vorgeschlagen: fleißig, bemüht, aber eben halt Ergebnisse abliefernd, die überprüft werden müssen \[18\]. Ich mag diese Metapher nicht, denn sie diskreditiert alle Praktikanten. Ich mag die Metapher des zerstreuten Professors, der viel weiß, aber eben auch manches durcheinander bringt.
+:::
+
+## Das Marketing-Dilemma
+
+-   Tech-Konzerne meiden ehrliche Metaphern.
+-   "Fehleranfälliger Professor" verkauft sich schlecht.
+-   "Magie" und "Dschinn" verkaufen sich gut.
+-   Dies fördert den **"Verzauberten Determinismus"**.
+
+::: notes
+Das Problem mit diesen Metaphern: Das verkauft sich nicht wirklich gut für OpenAI, Microsoft und Co. Sie sagen zwar, dass KI Fehler machen kann, aber diese Metapher ist dann doch zu ehrlich. Studien zeigen, dass Metaphern wie "Dschinn" oder "Magie" zwar die Adoption fördern, aber das kritische Denken ausschalten \[19\]. Karasinski nennt das "Enchanted Determinism" \[20\]: Wir akzeptieren die Technologie als magisch und unvermeidbar.
+:::
+
+## Kritische Gegen-Metaphern (1/2)
+
+-   **Der Stochastische Papagei:**
+    -   (Bender et al., 2021)
+    -   Plappert nach ohne Verständnis.
+    -   Betont die statistische Natur.
+    -   Technisch treffend, entzaubernd.
+
+::: notes
+Kritiker nutzen den Stochastischen Papagei als Metapher \[21\]. Technisch sicherlich nicht ganz unrichtig. Sie betont, dass das System nur Wahrscheinlichkeiten berechnet, ohne die Bedeutung zu verstehen.
+:::
+
+## Kritische Gegen-Metaphern (2/2)
+
+-   **Der Kolonisierende Lautsprecher:**
+    -   Verstärkt dominante (westliche) Stimmen.
+    -   Verdrängt Minderheiten.
+-   **Der Spiegel:**
+    -   Zeigt uns unsere eigenen Daten/Vorurteile.
+    -   Keine fremde Intelligenz, sondern Reflexion.
+
+::: notes
+Ich habe auch vom Kolonisierenden Lautsprecher (Colonizing loudspeaker) gehört \[22\]. Eine weitere starke Metapher ist der Spiegel \[23\]: KI generiert nichts Neues, sie reflektiert nur das, was wir als Trainingsdaten hineingegeben haben.
+:::
+
+## Metaphern der Angst
+
+-   **Der Terminator:**
+    -   Physische Vernichtung.
+    -   Aufmerksamkeitsmotor für Medien.
+-   **Die Datenkrake:**
+    -   Überwachung und Kontrollverlust.
+    -   Spezifisch deutsche Angst-Metapher.
+
+::: notes
+Manchmal wird die KI auch als potentieller Terminator dargestellt \[24\]. Metaphern können auch dazu dienen, mit Ängsten zu spielen, das sind Aufmerksamkeitsmotoren, insbesondere für Medien. Im deutschen Raum ist zudem die "Datenkrake" relevant \[25\], die weniger die physische Vernichtung, sondern die totale Überwachung thematisiert.
+:::
+
+## Die Diktatur der Vergangenheit
+
+-   KI lernt nur aus vergangenen Daten.
+-   **Gefahr:**
+    -   Wenn wir KI als "Orakel" nutzen.
+    -   Wir erhalten keine Zukunftsvision.
+    -   Wir erhalten eine Rekombination der Vergangenheit.
+
+::: notes
+Hier liegt ein weiteres Risiko: Forscher warnen vor der "Diktatur der Vergangenheit" \[20\]. Da KI nur mit historischen Daten trainiert ist, kann sie das radikal Neue nicht denken. Wenn wir sie als Orakel nutzen, sperren wir uns in eine Echokammer des Gestern ein.
+:::
+
+## Die "Alien Intelligence"
+
+-   **Kevin Kellys These:**
+    -   KI ist keine "bessere" menschliche Intelligenz.
+    -   Sie ist eine "Alien Intelligence".
+    -   Fundamental andersartig (wie Fliegen mit Propellern vs. Flügelschlag).
+
+::: notes
+Vielleicht müssen wir uns von dem Vergleich mit dem Menschen lösen. Kevin Kelly schlägt vor, KI als "Alien Intelligence" zu sehen \[26\]. Nicht als besser oder schlechter als wir, sondern als eine Intelligenz, die im Universum der Möglichkeiten eine völlig andere Nische besetzt.
+:::
+
+## Fazit: Zu früh für Festlegungen?
+
+-   Oft falsche Metaphern bei neuen Technologien.
+-   Schneller Wandel der KI.
+-   Vielleicht brauchen wir ganz neue Bilder.
+-   Vielleicht kann nichts aus der Vergangenheit KI erklären.
+
+::: notes
+Eine abschließende Frage ist, ob es nicht noch zu früh ist, eine Metapher zu nutzen. Oft war es in der Vergangenheit so, dass wir die falschen Metaphern verwendet haben, wenn eine neue Technologie kam. Aber die Welt der KI ändert sich so schnell, könnte es sein, dass wir uns bald ganz andere Metaphern überlegen müssen? Oder werden wir an einen Punkt kommen, an dem wir merken, dass nichts aus der Vergangenheit eine KI gut erklären kann?
+:::
+
+## Was bedeutet das für Sie?
+
+-   Metaphern sind auch in der Digitalen Transformation elementar.
+-   Suchen Sie Metaphern, die Technik erklären, aber wichtige Elemente nicht ausblenden.
+-   Achten Sie auf Metaphern, die Ihnen angeboten werden. Sind diese hilfreich? Sind sie ehrlich? Welches Gefühl heben sie hervor?
+
+## Quellen (1/2)
+
+-   **Lakoff, G., & Johnson, M. (1980).** *Metaphors We Live By*. University of Chicago Press. \[27\]
+-   **Cheng, M., et al. (2026).** *Metaphors of AI indicate that people increasingly perceive AI as warm and human-like*. Nature Communications Psychology. \[28\]
+-   **Karasinski, M., & Candiotto, K. B. (2024).** *AI’s black box and the supremacy of standards*. Filosofia Unisinos. \[20\]
+-   **Ong, W. J. (1982).** *Orality and Literacy*. \[29\]
+
+## Quellen (2/2)
+
+-   **Bender, E. M., et al. (2021).** *On the Dangers of Stochastic Parrots*. FAccT '21. \[21\]
+-   **Kelly, K. (2017).** *The Myth of a Superhuman AI*. Backchannel. \[30\]
+-   **Henschel, A. (2025).** *Das Problem mit der Intelligenz*. Wissenschaftskommunikation.de. \[31\]
+-   **Gupta, A., et al. (2024).** *Assistant, Parrot, or Colonizing Loudspeaker?*. Open Praxis. \[22\]
+
+
